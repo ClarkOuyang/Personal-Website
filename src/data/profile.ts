@@ -2,31 +2,35 @@ import type { Profile } from '../types'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // EDIT YOUR PERSONAL INFORMATION HERE
+// Photo: drop a square image at public/photo.jpg and set photo: '/photo.jpg'.
+// Socials: replace the placeholder scholar/github/linkedin URLs with your own.
 // ─────────────────────────────────────────────────────────────────────────────
 export const profile: Profile = {
-  name: 'Jane A. Doe',
-  firstName: 'Jane',
-  title: 'PhD Candidate in Computer Science',
-  affiliation: 'Department of Computer Science, Example University',
-  location: 'Boston, MA, USA',
+  name: 'Yipeng Ouyang',
+  firstName: 'Yipeng',
+  title: 'Undergraduate Researcher · B.S. Candidate in New Energy Science and Engineering',
+  affiliation: 'Nanjing University — Group of Prof. Zhigang Zou',
+  location: 'Shenzhen, Guangdong, China',
   // Put your photo at public/photo.jpg (square, ~400×400 looks best).
-  photo: '/photo.jpg',
+  photo: '/photo.svg',
   bio: [
-    'I am a PhD candidate in Computer Science at Example University, advised by Prof. Alan Turing. My research lies at the intersection of machine learning and human-computer interaction, with a focus on building interpretable models that people can trust and use effectively.',
-    'Before my PhD, I received my M.S. in Electrical Engineering from Example Institute of Technology and spent two years as a research engineer at a startup working on large-scale recommendation systems. I am broadly interested in robust representation learning, interactive ML, and the societal impact of intelligent systems.',
+    'I am Yipeng Ouyang, an undergraduate student in New Energy Science and Engineering at Nanjing University, working in the group of Prof. Zhigang Zou under the supervision of Prof. Zhaosheng Li and Prof. Jianyong Feng. My research focuses on non-precious-metal electrocatalysis for hydrogen production, in particular proton exchange membrane water electrolysis (PEMWE).',
+    'I engineer cobalt-based composite catalysts that overcome the intrinsic instability of non-precious metals in acidic oxygen evolution reaction (OER) environments. Using advanced characterization (TEM, SEM, XRD, XPS, XAS, DEMS, in-situ FTIR) together with electrochemical techniques (RRDE, catalyst-coated-membrane fabrication), I aim to build durable, low-cost electrolyzers for green hydrogen. I am also exploring scalable perovskite–Si photoelectrocatalysis for water splitting during my summer research at Yale University.',
   ],
   researchInterests: [
-    'Machine Learning',
-    'Interpretability',
-    'Human-Computer Interaction',
-    'Representation Learning',
-    'Trustworthy AI',
+    'Electrocatalysis',
+    'Photoelectrocatalysis',
+    'PEM Water Electrolysis',
+    'Hydrogen Production',
+    'Energy Materials',
+    'Automation',
   ],
   socials: [
-    { type: 'scholar', href: 'https://scholar.google.com/citations?user=XXXXXXX', label: 'Google Scholar' },
-    { type: 'github', href: 'https://github.com/janedoe', label: 'GitHub' },
-    { type: 'linkedin', href: 'https://www.linkedin.com/in/janedoe', label: 'LinkedIn' },
-    { type: 'email', href: 'mailto:jane.doe@example.edu', label: 'Email' },
+    { type: 'email', href: 'mailto:231880021@smail.nju.edu.cn', label: 'Email' },
     { type: 'cv', href: '/cv.pdf', label: 'Curriculum Vitae' },
+    // TODO: replace these placeholders with your real profile URLs.
+    { type: 'scholar', href: 'https://scholar.google.com/', label: 'Google Scholar' },
+    { type: 'github', href: 'https://github.com/', label: 'GitHub' },
+    { type: 'linkedin', href: 'https://www.linkedin.com/', label: 'LinkedIn' },
   ],
 }

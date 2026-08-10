@@ -5,39 +5,33 @@ import type { Project } from '../types'
 // ─────────────────────────────────────────────────────────────────────────────
 export const projects: Project[] = [
   {
-    id: 'proj-interpretable',
-    title: 'Interpretable Representation Learning',
+    id: 'proj-pemwe',
+    title: 'Non-Precious-Metal PEM Water Electrolysis',
     description:
-      'Developing methods that learn disentangled, human-understandable concepts from high-dimensional data, with provable robustness guarantees under distribution shift.',
-    keywords: ['Explainable AI', 'Concept Bottleneck', 'Robustness'],
-    status: 'Ongoing',
+      'Engineered a cobalt-based composite catalyst (CSO) integrating transition-metal oxides to overcome the intrinsic instability of non-precious metals in acidic OER. Fabricated high-performance catalyst-coated membranes (CCM) via optimized sol–gel synthesis and ink formulation for PEMWE integration, achieving stable operation for over 800 hours at 100 mA cm⁻² with a 1.70 V cell voltage.',
+    keywords: ['PEMWE', 'OER', 'Cobalt catalyst', 'Hydrogen'],
+    status: 'Manuscript in preparation (joint first author)',
     links: [
-      { type: 'paper', href: 'https://arxiv.org/abs/2501.00001' },
-      { type: 'code', href: 'https://github.com/janedoe/ccp' },
+      // e.g. { type: 'paper', href: 'https://arxiv.org/abs/XXXX' },
+      // e.g. { type: 'demo', href: '/gallery' },
     ],
   },
   {
-    id: 'proj-hitl',
-    title: 'Human-in-the-Loop Model Debugging',
+    id: 'proj-mechanism',
+    title: 'OER Mechanism & Material Structure',
     description:
-      'A collaborative framework where humans and models iteratively refine feature attributions, reducing annotation effort while improving model reliability.',
-    keywords: ['Human-Computer Interaction', 'Active Learning'],
+      'Investigated OER mechanisms and catalyst structure with TEM, SEM, XRD, XPS, XAS, DEMS and in-situ FTIR, and studied surface-pH evolution using a rotating ring-disk electrode (RRDE). EXAFS fitting resolves Co–O and Co–Co / Sb–O coordination environments.',
+    keywords: ['XAS / EXAFS', 'In-situ FTIR', 'RRDE', 'Mechanism'],
     status: 'Ongoing',
-    links: [
-      { type: 'paper', href: 'https://arxiv.org/abs/2301.00003' },
-      { type: 'demo', href: 'https://janedoe.github.io/imd-demo' },
-    ],
+    links: [],
   },
   {
-    id: 'proj-robust-supervision',
-    title: 'Learning from Noisy Human Supervision',
+    id: 'proj-perovskite',
+    title: 'Scalable Perovskite–Si Photoelectrocatalysis',
     description:
-      'Algorithms that remain accurate when training labels are imperfect, leveraging weak supervision and confidence calibration.',
-    keywords: ['Weak Supervision', 'Calibration', 'Semi-supervised'],
-    status: 'Published (ICML 2024)',
-    links: [
-      { type: 'paper', href: 'https://arxiv.org/abs/2401.00002' },
-      { type: 'code', href: 'https://github.com/janedoe/rlnhs' },
-    ],
+      'Summer research at Yale University on photoelectrocatalytic water splitting in alkaline water. Designed perovskite–Si PEC and scanning electrocatalysis microscopy (SECM) cells with a 3D printer, and fabricated Pt-coated AEMWE anodes by sputtering.',
+    keywords: ['Photoelectrocatalysis', 'Perovskite–Si', 'PEC', 'AEMWE'],
+    status: 'Yale summer research (2026)',
+    links: [],
   },
 ]
