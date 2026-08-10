@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor jumps so the fixed navbar doesn't cover headings. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+    @apply dark:bg-[#0d1320] dark:text-slate-200;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+    @apply dark:bg-brand-700 dark:text-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-8;
+  }
+
+  .section-heading {
+    @apply mb-2 text-2xl font-bold tracking-tight text-brand-900 dark:text-white sm:text-3xl;
+  }
+
+  .section-subheading {
+    @apply mb-8 text-sm font-medium uppercase tracking-widest text-olive-600 dark:text-olive-400;
+  }
+
+  /* Pills / tags */
+  .pill {
+    @apply inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 transition-colors dark:border-brand-700 dark:bg-brand-800/50 dark:text-brand-100;
+  }
+
+  /* Outline link/button used across cards */
+  .link-btn {
+    @apply inline-flex items-center gap-1.5 rounded-md border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:border-brand-400 hover:bg-brand-50 hover:text-brand-700 dark:border-slate-700 dark:text-slate-200 dark:hover:border-brand-500 dark:hover:bg-brand-800/50 dark:hover:text-white;
+  }
+}
