@@ -1,5 +1,4 @@
 import { profile } from '../data/profile'
-import { SocialLinks } from './SocialIcons'
 import { MapPin } from 'lucide-react'
 
 export default function Hero() {
@@ -23,13 +22,6 @@ export default function Hero() {
                 el.src = '/photo.svg'
               }}
               className="relative h-40 w-40 rounded-2xl border border-slate-200 object-cover shadow-soft sm:h-48 sm:w-48 lg:h-56 lg:w-56 dark:border-slate-700"
-            />
-          </div>
-          <div className="w-full text-center lg:text-left">
-            <SocialLinks
-              socials={profile.socials}
-              className="justify-center lg:justify-start"
-              iconClassName="h-[18px] w-[18px]"
             />
           </div>
         </div>

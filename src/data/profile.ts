@@ -11,6 +11,9 @@ export const profile: Profile = {
   title: 'Undergraduate Researcher · B.S. Candidate in New Energy Science and Engineering',
   affiliation: 'Nanjing University — Group of Prof. Zhigang Zou',
   location: 'Shenzhen, Guangdong, China',
+  // Contact (shown in the footer).
+  email: '231880021@smail.nju.edu.cn',
+  phone: '+86 13927434134',
   // Put your photo at public/photo.jpg (square, ~400×400 looks best).
   photo: '/photo.svg',
   bio: [

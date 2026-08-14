@@ -27,6 +27,9 @@ export interface Profile {
   title: string
   affiliation: string
   location: string
+  /** Contact details shown in the footer. */
+  email: string
+  phone: string
   /** Path under /public or an absolute URL. Use a square image for best results. */
   photo: string
   /** Each string is rendered as a separate paragraph. */
