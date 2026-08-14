@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react'
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Globe, Menu, Moon, Sun, X } from 'lucide-react'
 import { profile } from '../data/profile'
+import { useLang } from '../i18n/LanguageContext'
+import { getString } from '../i18n/strings'
 
 interface NavLink {
-  label: string
+  key: string
   href: string
 }
 
 const LINKS: NavLink[] = [
-  { label: 'About', href: '#about' },
-  { label: 'News', href: '#news' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Publications', href: '#publications' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { key: 'nav.about', href: '#about' },
+  { key: 'nav.news', href: '#news' },
+  { key: 'nav.projects', href: '#projects' },
+  { key: 'nav.gallery', href: '#gallery' },
+  { key: 'nav.publications', href: '#publications' },
+  { key: 'nav.experience', href: '#experience' },
+  { key: 'nav.contact', href: '#contact' },
 ]
 
 export default function Navbar({
@@ -26,6 +28,7 @@ export default function Navbar({
 }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { lang, toggleLang } = useLang()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -34,7 +37,6 @@ export default function Navbar({
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close mobile menu on route/nav click.
   const close = () => setOpen(false)
 
   return (
@@ -69,14 +71,16 @@ export default function Navbar({
               href={item.href}
               className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-brand-50 hover:text-brand-700 dark:text-slate-300 dark:hover:bg-brand-800/50 dark:hover:text-white"
             >
-              {item.label}
+              {getString(item.key, lang)}
             </a>
           ))}
+          <LangToggle lang={lang} onToggle={toggleLang} />
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         </div>
 
         {/* Mobile controls */}
         <div className="flex items-center gap-1 md:hidden">
+          <LangToggle lang={lang} onToggle={toggleLang} />
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button
             type="button"
@@ -101,13 +105,34 @@ export default function Navbar({
                 onClick={close}
                 className="rounded-md px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-brand-50 dark:text-slate-200 dark:hover:bg-brand-800/50"
               >
-                {item.label}
+                {getString(item.key, lang)}
               </a>
             ))}
           </div>
         </div>
       )}
     </header>
+  )
+}
+
+function LangToggle({
+  lang,
+  onToggle,
+}: {
+  lang: 'en' | 'zh'
+  onToggle: () => void
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onToggle}
+      aria-label={getString('nav.toggleLang', lang)}
+      title={getString('nav.toggleLang', lang)}
+      className="ml-1 flex items-center gap-1 rounded-md border border-slate-200 px-2.5 py-2 text-sm font-semibold text-slate-600 transition-colors hover:border-brand-400 hover:text-brand-700 dark:border-slate-700 dark:text-slate-300 dark:hover:border-brand-500 dark:hover:text-white"
+    >
+      <Globe className="h-4 w-4" />
+      {lang === 'en' ? '中' : 'EN'}
+    </button>
   )
 }
 

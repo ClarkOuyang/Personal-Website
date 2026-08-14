@@ -6,42 +6,70 @@ import type { NewsItem } from '../types'
 // ─────────────────────────────────────────────────────────────────────────────
 export const news: NewsItem[] = [
   {
+    id: 'yale-2026',
     date: 'Jul 2026',
     iso: '2026-07-01',
-    title: 'Summer research intern at Yale University',
-    description:
-      'Joined the Hu / Shu Lab (with Kaidou Zhu Lab) to work on scalable perovskite–Si photoelectrocatalysis for water splitting and designed PEC / SECM cells via 3D printing.',
-    tag: 'Experience',
+    title: {
+      en: 'Summer research intern at Yale University',
+      zh: '耶鲁大学暑期科研实习',
+    },
+    description: {
+      en: 'Joined the Hu / Shu Lab (with Kaidou Zhu Lab) to work on scalable perovskite–Si photoelectrocatalysis for water splitting and designed PEC / SECM cells via 3D printing.',
+      zh: '加入 Hu / Shu 课题组（与朱恺逗课题组合作），研究可放大的钙钛矿—硅光电催化水分解，并通过 3D 打印设计 PEC / SECM 电解池。',
+    },
+    tag: { en: 'Experience', zh: '经历' },
   },
   {
+    id: 'manuscript-2026',
     date: 'Late 2026',
     iso: '2026-11-01',
-    title: 'Manuscript in preparation on non-precious-metal PEMWE',
-    description:
-      'Our work on a cobalt-based composite catalyst (CSO) for durable acidic OER is being prepared for submission (joint first author).',
-    tag: 'Publication',
+    title: {
+      en: 'Manuscript in preparation on non-precious-metal PEMWE',
+      zh: '非贵金属 PEMWE 论文在撰写中',
+    },
+    description: {
+      en: 'Our work on a cobalt-based composite catalyst (CSO) for durable acidic OER is being prepared for submission (joint first author).',
+      zh: '我们关于钴基复合催化剂（CSO）用于稳定酸性 OER 的研究正在准备投稿（共同一作）。',
+    },
+    tag: { en: 'Publication', zh: '论文' },
   },
   {
+    id: 'research-2025',
     date: 'Feb 2025',
     iso: '2025-02-01',
-    title: 'Started undergraduate research on PEMWE electrocatalysis',
-    description:
-      'Joined the group of Prof. Zhigang Zou (Nanjing University), supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng.',
-    tag: 'Research',
+    title: {
+      en: 'Started undergraduate research on PEMWE electrocatalysis',
+      zh: '开始 PEMWE 电催化本科科研',
+    },
+    description: {
+      en: 'Joined the group of Prof. Zhigang Zou (Nanjing University), supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng.',
+      zh: '加入南京大学邹志刚教授课题组，师从李召声教授与冯建勇教授。',
+    },
+    tag: { en: 'Research', zh: '科研' },
   },
   {
+    id: 'sunwoda-2025',
     date: 'Aug 2025',
     iso: '2025-08-01',
-    title: 'R&D internship at Sunwoda Energy Technology',
-    description:
-      'Conducted electrochemical performance and safety evaluation of lithium-ion batteries and assisted CNAS certification documentation.',
-    tag: 'Experience',
+    title: {
+      en: 'R&D internship at Sunwoda Energy Technology',
+      zh: '欣旺达能源科技研发实习',
+    },
+    description: {
+      en: 'Conducted electrochemical performance and safety evaluation of lithium-ion batteries and assisted CNAS certification documentation.',
+      zh: '开展锂离子电池电化学性能与安全性评估，并协助 CNAS 认证技术文档整理。',
+    },
+    tag: { en: 'Experience', zh: '经历' },
   },
   {
+    id: 'nju-2023',
     date: 'Sep 2023',
     iso: '2023-09-01',
-    title: 'Began studies at Nanjing University',
-    description: 'Major: New Energy Science and Engineering.',
-    tag: 'Education',
+    title: {
+      en: 'Began studies at Nanjing University',
+      zh: '进入南京大学学习',
+    },
+    description: { en: 'Major: New Energy Science and Engineering.', zh: '专业：新能源科学与工程。' },
+    tag: { en: 'Education', zh: '教育' },
   },
 ]

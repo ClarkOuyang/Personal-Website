@@ -1,6 +1,8 @@
 import { projects } from '../data/projects'
 import type { ProjectLinkType } from '../types'
 import { Code2, FileText, Globe, type LucideIcon } from 'lucide-react'
+import { useLang, resolveText } from '../i18n/LanguageContext'
+import { getString } from '../i18n/strings'
 
 const PROJECT_ICONS: Record<ProjectLinkType, LucideIcon> = {
   paper: FileText,
@@ -9,20 +11,21 @@ const PROJECT_ICONS: Record<ProjectLinkType, LucideIcon> = {
 }
 
 const PROJECT_LABELS: Record<ProjectLinkType, string> = {
-  paper: 'Paper',
-  code: 'Code',
-  demo: 'Demo',
+  paper: 'link.paper',
+  code: 'link.code',
+  demo: 'link.demo',
 }
 
 export default function Projects() {
+  const { lang } = useLang()
   return (
     <section
       id="projects"
       className="scroll-mt-20 border-y border-slate-100 bg-slate-50/60 py-16 sm:py-20 dark:border-slate-800 dark:bg-white/[0.02]"
     >
       <div className="container-page">
-        <p className="section-subheading">What I work on</p>
-        <h2 className="section-heading">Research &amp; Projects</h2>
+        <p className="section-subheading">{getString('section.what', lang)}</p>
+        <h2 className="section-heading">{getString('heading.projects', lang)}</h2>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {projects.map((p) => (
@@ -32,26 +35,26 @@ export default function Projects() {
             >
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-lg font-bold text-brand-900 dark:text-white">
-                  {p.title}
+                  {resolveText(p.title, lang)}
                 </h3>
                 {p.status && (
                   <span className="shrink-0 rounded-full border border-olive-200 bg-olive-50 px-2.5 py-0.5 text-[11px] font-semibold text-olive-700 dark:border-olive-700 dark:bg-olive-800/40 dark:text-olive-200">
-                    {p.status}
+                    {resolveText(p.status, lang)}
                   </span>
                 )}
               </div>
 
               <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                {p.description}
+                {resolveText(p.description, lang)}
               </p>
 
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.keywords.map((k) => (
+                {p.keywords.map((k, i) => (
                   <span
-                    key={k}
+                    key={i}
                     className="rounded-md bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700 dark:bg-brand-800/40 dark:text-brand-100"
                   >
-                    {k}
+                    {resolveText(k, lang)}
                   </span>
                 ))}
               </div>
@@ -69,7 +72,7 @@ export default function Projects() {
                         className="link-btn"
                       >
                         <Icon className="h-4 w-4" />
-                        {l.label ?? PROJECT_LABELS[l.type]}
+                        {l.label ?? getString(PROJECT_LABELS[l.type], lang)}
                       </a>
                     )
                   })}

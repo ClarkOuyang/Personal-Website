@@ -2,7 +2,13 @@
 // Shared TypeScript interfaces for the academic website data layer.
 // The data lives in src/data/*.ts as plain, JSON-like objects so it is easy to
 // edit. Swap these for your own real content — the components stay unchanged.
+//
+// A field typed as `Bilingual` accepts either a plain string (shown in every
+// language) or an { en, zh } object for per-language text. Resolve with
+// resolveText() from src/i18n/LanguageContext.
 // ---------------------------------------------------------------------------
+
+export type Bilingual = string | { en: string; zh: string }
 
 export type SocialType =
   | 'scholar'
@@ -24,18 +30,18 @@ export interface Profile {
   name: string
   /** Short first name used for the hero greeting. */
   firstName: string
-  title: string
-  affiliation: string
+  title: Bilingual
+  affiliation: Bilingual
   location: string
   /** Contact details shown in the footer. */
   email: string
   phone: string
   /** Path under /public or an absolute URL. Use a square image for best results. */
   photo: string
-  /** Each string is rendered as a separate paragraph. */
-  bio: string[]
+  /** Each entry is rendered as a separate paragraph. */
+  bio: Bilingual[]
   /** Research direction pills shown under the hero. */
-  researchInterests: string[]
+  researchInterests: Bilingual[]
   socials: SocialLink[]
 }
 
@@ -49,15 +55,15 @@ export interface PublicationLink {
 
 export interface Publication {
   id: string
-  title: string
+  title: Bilingual
   /** Author names. The name matching Profile.name is auto-highlighted. */
   authors: string[]
   /** Venue / journal / conference name. */
-  venue: string
+  venue: Bilingual
   year: number
   /** e.g. "Conference", "Journal", "Preprint". */
-  kind: string
-  tags: string[]
+  kind: Bilingual
+  tags: Bilingual[]
   /** Mark as a highlighted / selected paper (adds a small badge). */
   highlight?: boolean
   links: PublicationLink[]
@@ -66,13 +72,14 @@ export interface Publication {
 }
 
 export interface NewsItem {
+  id: string
   /** Display date, e.g. "Aug 2025" or "2025". Sorted newest-first. */
   date: string
   /** ISO date used for sorting (optional). */
   iso?: string
-  title: string
-  description?: string
-  tag?: string
+  title: Bilingual
+  description?: Bilingual
+  tag?: Bilingual
   link?: { href: string; label: string }
 }
 
@@ -80,22 +87,22 @@ export type ProjectLinkType = 'paper' | 'code' | 'demo'
 
 export interface Project {
   id: string
-  title: string
-  description: string
-  keywords: string[]
-  status?: string
+  title: Bilingual
+  description: Bilingual
+  keywords: Bilingual[]
+  status?: Bilingual
   links: { type: ProjectLinkType; href: string; label?: string }[]
 }
 
 export interface TimelineItem {
   id: string
   /** Job title or degree. */
-  role: string
+  role: Bilingual
   /** Company / lab / university. */
-  organization: string
+  organization: Bilingual
   location?: string
   start: string
   end: string
-  description?: string
-  bullets?: string[]
+  description?: Bilingual
+  bullets?: Bilingual[]
 }

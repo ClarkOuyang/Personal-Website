@@ -1,6 +1,17 @@
 import { news } from '../data/news'
 import type { NewsItem } from '../types'
 import { ExternalLink } from 'lucide-react'
+import { useLang, resolveText } from '../i18n/LanguageContext'
+import { getString } from '../i18n/strings'
+
+const TAG_COLORS: Record<string, string> = {
+  Publication: 'bg-brand-100 text-brand-700 dark:bg-brand-800/60 dark:text-brand-100',
+  Talk: 'bg-olive-100 text-olive-700 dark:bg-olive-800/60 dark:text-olive-100',
+  Award: 'bg-amber-100 text-amber-700 dark:bg-amber-800/50 dark:text-amber-100',
+  Experience: 'bg-sky-100 text-sky-700 dark:bg-sky-800/50 dark:text-sky-100',
+  Research: 'bg-violet-100 text-violet-700 dark:bg-violet-800/50 dark:text-violet-100',
+  Education: 'bg-teal-100 text-teal-700 dark:bg-teal-800/50 dark:text-teal-100',
+}
 
 function sortNews(items: NewsItem[]): NewsItem[] {
   return [...items].sort((a, b) => {
@@ -10,24 +21,18 @@ function sortNews(items: NewsItem[]): NewsItem[] {
   })
 }
 
-const TAG_COLORS: Record<string, string> = {
-  Publication: 'bg-brand-100 text-brand-700 dark:bg-brand-800/60 dark:text-brand-100',
-  Talk: 'bg-olive-100 text-olive-700 dark:bg-olive-800/60 dark:text-olive-100',
-  Award: 'bg-amber-100 text-amber-700 dark:bg-amber-800/50 dark:text-amber-100',
-  Experience: 'bg-sky-100 text-sky-700 dark:bg-sky-800/50 dark:text-sky-100',
-}
-
 export default function News() {
+  const { lang } = useLang()
   const items = sortNews(news)
 
   return (
     <section id="news" className="container-page scroll-mt-20 py-16 sm:py-20">
-      <p className="section-subheading">Recent</p>
-      <h2 className="section-heading">News &amp; Announcements</h2>
+      <p className="section-subheading">{getString('section.recent', lang)}</p>
+      <h2 className="section-heading">{getString('heading.news', lang)}</h2>
 
       <ol className="relative mt-2 border-l-2 border-slate-200 pl-6 dark:border-slate-700">
         {items.map((item) => (
-          <li key={item.title + item.date} className="relative mb-8 last:mb-0">
+          <li key={item.id} className="relative mb-8 last:mb-0">
             <span className="absolute -left-[31px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-brand-600 shadow dark:border-[#0d1320]" />
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
               <time className="shrink-0 text-sm font-semibold tabular-nums text-olive-600 dark:text-olive-400">
@@ -37,21 +42,21 @@ export default function News() {
                 {item.tag && (
                   <span
                     className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
-                      TAG_COLORS[item.tag] ??
+                      TAG_COLORS[resolveText(item.tag, lang)] ??
                       'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'
                     }`}
                   >
-                    {item.tag}
+                    {resolveText(item.tag, lang)}
                   </span>
                 )}
                 <span className="font-medium text-slate-800 dark:text-slate-100">
-                  {item.title}
+                  {resolveText(item.title, lang)}
                 </span>
               </div>
             </div>
             {item.description && (
               <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                {item.description}
+                {resolveText(item.description, lang)}
               </p>
             )}
             {item.link && (

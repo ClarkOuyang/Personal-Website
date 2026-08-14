@@ -12,6 +12,8 @@ import {
   Quote,
   type LucideIcon,
 } from 'lucide-react'
+import { useLang, resolveText } from '../i18n/LanguageContext'
+import { getString } from '../i18n/strings'
 
 const LINK_ICONS: Record<PubLinkType, LucideIcon> = {
   pdf: FileText,
@@ -22,11 +24,11 @@ const LINK_ICONS: Record<PubLinkType, LucideIcon> = {
 }
 
 const LINK_LABELS: Record<PubLinkType, string> = {
-  pdf: 'PDF',
-  code: 'Code',
-  project: 'Project',
-  slides: 'Slides',
-  doi: 'DOI',
+  pdf: 'link.pdf',
+  code: 'link.code',
+  project: 'link.project',
+  slides: 'link.slides',
+  doi: 'link.doi',
 }
 
 function AuthorList({ authors }: { authors: string[] }) {
@@ -51,7 +53,7 @@ function AuthorList({ authors }: { authors: string[] }) {
   )
 }
 
-function PubCard({ pub }: { pub: Publication }) {
+function PubCard({ pub, lang }: { pub: Publication; lang: 'en' | 'zh' }) {
   const [showBib, setShowBib] = useState(false)
   const [copied, setCopied] = useState(false)
 
@@ -74,14 +76,14 @@ function PubCard({ pub }: { pub: Publication }) {
             {pub.year}
           </span>
           <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-slate-400">
-            {pub.kind}
+            {resolveText(pub.kind, lang)}
           </span>
         </div>
 
         <div className="min-w-0 flex-1">
           <div className="flex items-start gap-2">
             <h3 className="text-[15px] font-semibold leading-snug text-brand-900 dark:text-white">
-              {pub.title}
+              {resolveText(pub.title, lang)}
             </h3>
             {pub.highlight && (
               <span className="mt-0.5 shrink-0 rounded-full bg-olive-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-olive-700 dark:bg-olive-800/50 dark:text-olive-200">
@@ -94,17 +96,17 @@ function PubCard({ pub }: { pub: Publication }) {
             <AuthorList authors={pub.authors} />
           </p>
           <p className="mt-0.5 text-sm italic text-slate-500 dark:text-slate-400">
-            {pub.venue}
+            {resolveText(pub.venue, lang)}
           </p>
 
           {/* Tags */}
           <div className="mt-2.5 flex flex-wrap gap-1.5">
-            {pub.tags.map((t) => (
+            {pub.tags.map((t, i) => (
               <span
-                key={t}
+                key={i}
                 className="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
               >
-                {t}
+                {resolveText(t, lang)}
               </span>
             ))}
           </div>
@@ -122,7 +124,7 @@ function PubCard({ pub }: { pub: Publication }) {
                   className="link-btn"
                 >
                   <Icon className="h-3.5 w-3.5" />
-                  {l.label ?? LINK_LABELS[l.type]}
+                  {l.label ?? getString(LINK_LABELS[l.type], lang)}
                 </a>
               )
             })}
@@ -134,7 +136,7 @@ function PubCard({ pub }: { pub: Publication }) {
               className="link-btn"
             >
               <Quote className="h-3.5 w-3.5" />
-              BibTeX
+              {getString('link.bibtex', lang)}
             </button>
           </div>
 
@@ -152,11 +154,11 @@ function PubCard({ pub }: { pub: Publication }) {
                 >
                   {copied ? (
                     <>
-                      <Check className="h-3.5 w-3.5" /> Copied
+                      <Check className="h-3.5 w-3.5" /> {getString('link.copied', lang)}
                     </>
                   ) : (
                     <>
-                      <Copy className="h-3.5 w-3.5" /> Copy
+                      <Copy className="h-3.5 w-3.5" /> {getString('link.copy', lang)}
                     </>
                   )}
                 </button>
@@ -173,6 +175,7 @@ function PubCard({ pub }: { pub: Publication }) {
 }
 
 export default function Publications() {
+  const { lang } = useLang()
   const byYear = useMemo(() => {
     const sorted = [...publications].sort((a, b) => b.year - a.year)
     const map = new Map<number, Publication[]>()
@@ -186,8 +189,8 @@ export default function Publications() {
 
   return (
     <section id="publications" className="container-page scroll-mt-20 py-16 sm:py-20">
-      <p className="section-subheading">Selected works</p>
-      <h2 className="section-heading">Publications</h2>
+      <p className="section-subheading">{getString('section.selected', lang)}</p>
+      <h2 className="section-heading">{getString('heading.publications', lang)}</h2>
 
       <div className="mt-8 space-y-10">
         {byYear.map(([year, pubs]) => (
@@ -198,12 +201,12 @@ export default function Publications() {
               </h3>
               <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
               <span className="text-xs font-medium text-slate-400">
-                {pubs.length} {pubs.length === 1 ? 'paper' : 'papers'}
+                {(getString('pub.yearPapers', lang) as unknown as (n: number) => string)(pubs.length)}
               </span>
             </div>
             <div className="space-y-3">
               {pubs.map((p) => (
-                <PubCard key={p.id} pub={p} />
+                <PubCard key={p.id} pub={p} lang={lang} />
               ))}
             </div>
           </div>

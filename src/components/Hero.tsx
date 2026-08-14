@@ -1,7 +1,9 @@
 import { profile } from '../data/profile'
 import { MapPin, Mail, Phone } from 'lucide-react'
+import { useLang, resolveText } from '../i18n/LanguageContext'
 
 export default function Hero() {
+  const { lang } = useLang()
   return (
     <section
       id="about"
@@ -16,7 +18,6 @@ export default function Hero() {
               src={profile.photo}
               alt={`Portrait of ${profile.name}`}
               onError={(e) => {
-                // Fall back to the bundled placeholder if no real photo is present.
                 const el = e.currentTarget
                 if (el.src.endsWith('/photo.svg')) return
                 el.src = '/photo.svg'
@@ -45,21 +46,21 @@ export default function Hero() {
         {/* Text */}
         <div className="min-w-0">
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-olive-600 dark:text-olive-400">
-            {profile.title}
+            {resolveText(profile.title, lang)}
           </p>
           <h1 className="text-3xl font-extrabold tracking-tight text-brand-900 sm:text-4xl dark:text-white">
             {profile.name}
           </h1>
           <p className="mt-1 flex items-center gap-1.5 text-base text-slate-500 dark:text-slate-400">
             <MapPin className="h-4 w-4" />
-            {profile.affiliation}
+            {resolveText(profile.affiliation, lang)}
           </p>
 
           {/* Research interest pills */}
           <div className="mt-5 flex flex-wrap gap-2">
-            {profile.researchInterests.map((r) => (
-              <span key={r} className="pill">
-                {r}
+            {profile.researchInterests.map((r, i) => (
+              <span key={i} className="pill">
+                {resolveText(r, lang)}
               </span>
             ))}
           </div>
@@ -67,7 +68,7 @@ export default function Hero() {
           {/* Bio */}
           <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate-600 dark:text-slate-300">
             {profile.bio.map((para, i) => (
-              <p key={i}>{para}</p>
+              <p key={i}>{resolveText(para, lang)}</p>
             ))}
           </div>
         </div>

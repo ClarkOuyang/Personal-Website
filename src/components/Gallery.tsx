@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import { gallery } from '../data/gallery'
 import { X } from 'lucide-react'
+import { useLang, resolveText } from '../i18n/LanguageContext'
+import { getString } from '../i18n/strings'
 
 export default function Gallery() {
+  const { lang } = useLang()
   const [active, setActive] = useState<number | null>(null)
 
   useEffect(() => {
@@ -18,12 +21,10 @@ export default function Gallery() {
       id="gallery"
       className="container-page scroll-mt-20 py-16 sm:py-20"
     >
-      <p className="section-subheading">Research data</p>
-      <h2 className="section-heading">Figure Gallery</h2>
+      <p className="section-subheading">{getString('section.data', lang)}</p>
+      <h2 className="section-heading">{getString('heading.gallery', lang)}</h2>
       <p className="mb-8 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-        Selected characterization and performance figures from the
-        non-precious-metal PEMWE project (TEM, EDX, EXAFS, EIS, electrochemical
-        benchmarking and device design). Click any figure to enlarge.
+        {getString('gallery.intro', lang)}
       </p>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -37,17 +38,17 @@ export default function Gallery() {
             <div className="aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800">
               <img
                 src={fig.src}
-                alt={fig.title}
+                alt={resolveText(fig.title, lang)}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <div className="p-3">
               <h3 className="text-sm font-semibold text-brand-900 dark:text-white">
-                {fig.title}
+                {resolveText(fig.title, lang)}
               </h3>
               <p className="mt-0.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                {fig.caption}
+                {resolveText(fig.caption, lang)}
               </p>
             </div>
           </button>
@@ -76,12 +77,14 @@ export default function Gallery() {
           >
             <img
               src={gallery[active].src}
-              alt={gallery[active].title}
+              alt={resolveText(gallery[active].title, lang)}
               className="mx-auto max-h-[78vh] w-auto rounded-lg object-contain"
             />
             <figcaption className="mt-3 text-center text-sm text-slate-200">
-              <span className="font-semibold">{gallery[active].title}.</span>{' '}
-              {gallery[active].caption}
+              <span className="font-semibold">
+                {resolveText(gallery[active].title, lang)}.
+              </span>{' '}
+              {resolveText(gallery[active].caption, lang)}
             </figcaption>
           </figure>
         </div>
