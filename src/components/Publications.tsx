@@ -201,7 +201,7 @@ export default function Publications() {
               </h3>
               <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
               <span className="text-xs font-medium text-slate-400">
-                {(getString('pub.yearPapers', lang) as unknown as (n: number) => string)(pubs.length)}
+                {getString('pub.yearPapers', lang).replace('{n}', String(pubs.length))}
               </span>
             </div>
             <div className="space-y-3">

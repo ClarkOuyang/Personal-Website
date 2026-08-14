@@ -1,8 +1,9 @@
 import type { Lang } from './LanguageContext'
 
 // All static UI chrome (labels that are NOT your personal data) lives here,
-// keyed by language. Most values are strings; a few are functions for pluralization.
-export type StringValue = string | ((n: number) => string)
+// keyed by language. Values are strings; use {n} as a placeholder where a
+// number is substituted at the call site.
+export type StringValue = string
 
 const en: Record<string, StringValue> = {
   'nav.about': 'About',
@@ -34,7 +35,7 @@ const en: Record<string, StringValue> = {
     'Selected characterization and performance figures from the non-precious-metal PEMWE project (TEM, EDX, EXAFS, EIS, electrochemical benchmarking and device design). Click any figure to enlarge.',
   'gallery.click': 'Click any figure to enlarge.',
 
-  'pub.yearPapers': (n: number) => `${n} ${n === 1 ? 'paper' : 'papers'}`,
+  'pub.yearPapers': '{n} papers',
 
   'link.pdf': 'PDF',
   'link.code': 'Code',
@@ -84,7 +85,7 @@ const zh: Record<string, StringValue> = {
     '非贵金属 PEMWE 项目的部分表征与性能图（TEM、EDX、EXAFS、EIS、电化学对比与器件设计）。点击任意图可放大查看。',
   'gallery.click': '点击任意图可放大查看。',
 
-  'pub.yearPapers': (n: number) => `${n} 篇论文`,
+  'pub.yearPapers': '{n} 篇论文',
 
   'link.pdf': 'PDF',
   'link.code': '代码',
@@ -103,5 +104,5 @@ const zh: Record<string, StringValue> = {
 
 export function getString(key: string, lang: Lang): string {
   const raw = (lang === 'zh' ? zh : en)[key] ?? en[key] ?? key
-  return typeof raw === 'function' ? raw(2) : raw
+  return typeof raw === 'string' ? raw : key
 }
