@@ -1,5 +1,5 @@
 import { profile } from '../data/profile'
-import { MapPin } from 'lucide-react'
+import { MapPin, Mail, Phone } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -23,6 +23,22 @@ export default function Hero() {
               }}
               className="relative h-40 w-40 rounded-2xl border border-slate-200 object-cover shadow-soft sm:h-48 sm:w-48 lg:h-56 lg:w-56 dark:border-slate-700"
             />
+          </div>
+          <div className="w-full space-y-1 text-sm text-slate-600 dark:text-slate-300">
+            <a
+              href={`mailto:${profile.email}`}
+              className="flex items-center justify-center gap-1.5 hover:text-brand-700 dark:hover:text-brand-200 lg:justify-start"
+            >
+              <Mail className="h-4 w-4 text-olive-600 dark:text-olive-400" />
+              {profile.email}
+            </a>
+            <a
+              href={`tel:${profile.phone}`}
+              className="flex items-center justify-center gap-1.5 hover:text-brand-700 dark:hover:text-brand-200 lg:justify-start"
+            >
+              <Phone className="h-4 w-4 text-olive-600 dark:text-olive-400" />
+              {profile.phone}
+            </a>
           </div>
         </div>
 
