@@ -65,8 +65,8 @@ export const profile: Profile = {
   // Contact (shown under the portrait).
   email: '231880021@smail.nju.edu.cn',
   phone: '+86 13927434134',
-  // Put your photo at public/photo.jpg (square, ~400×400 looks best).
-  photo: '/photo.jpg',
+  // Put your photo at public/images/avatar.jpg (square, ~400×400 looks best).
+  photo: '/images/avatar.jpg',
   bio: [
     {
       en: 'I am Yipeng Ouyang, an undergraduate in New Energy Science and Engineering at Nanjing University (group of Prof. Zhigang Zou, supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng). I work across two complementary directions that converge on clean-energy conversion: (1) semiconductor optoelectronic materials and devices, and (2) photoelectrocatalysis / electrocatalysis for solar-driven hydrogen production.',
