@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-// base: './' makes built asset paths relative, so the site works whether it is
-// deployed to a GitHub project page (https://user.github.io/repo/) or a custom
-// domain — no need to hard-code the repository name here.
+// Deployed as a GitHub *project* page at:
+//   https://clarkouyang.github.io/Personal-Website/
+// so the base must be the repository name (with leading & trailing slash).
+// This makes every asset (JS, CSS, and /public images like the avatar) resolve
+// to /Personal-Website/... and load correctly on GitHub Pages.
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/Personal-Website/',
 })
