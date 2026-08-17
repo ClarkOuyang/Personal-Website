@@ -26,12 +26,32 @@ export interface SocialLink {
   label: string
 }
 
+export interface AffiliationLink {
+  label: string
+  href: string
+}
+
+export interface HeroAffiliation {
+  school: Bilingual
+  role: Bilingual
+  /** Date range, kept as-is (e.g. "Sep.2023 ~ Jun.2027"). */
+  period: string
+  supervisor: Bilingual
+  /** Optional external links shown after the supervisor name. */
+  supervisorLinks?: AffiliationLink[]
+  /** Optional, e.g. undergraduate major. */
+  major?: Bilingual
+  direction: Bilingual
+}
+
 export interface Profile {
   name: string
   /** Short first name used for the hero greeting. */
   firstName: string
   title: Bilingual
   affiliation: Bilingual
+  /** Two-column affiliation blocks shown directly under the name in the hero. */
+  affiliations: HeroAffiliation[]
   location: string
   /** Contact details shown in the footer. */
   email: string

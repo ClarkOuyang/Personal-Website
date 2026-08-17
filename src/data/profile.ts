@@ -18,6 +18,50 @@ export const profile: Profile = {
     zh: '南京大学 — 邹志刚教授课题组',
   },
   location: 'Shenzhen, Guangdong, China',
+  // Two affiliation blocks shown directly under the name in the hero.
+  // Edit freely — links open in a new tab.
+  affiliations: [
+    {
+      school: { en: 'Nanjing University', zh: '南京大学' },
+      role: { en: 'Undergraduate', zh: '本科' },
+      period: 'Sep.2023 ~ Jun.2027',
+      supervisor: {
+        en: 'Supervisor: Zhaosheng Li, Jianyong Feng (Group of Zhigang Zou)',
+        zh: '导师：李召声、冯建勇（邹志刚教授课题组）',
+      },
+      major: {
+        en: 'Major: New Energy Science and Engineering',
+        zh: '专业：新能源科学与工程',
+      },
+      direction: {
+        en: 'Research: Electrocatalysis for water splitting and OER mechanism study',
+        zh: '研究方向：电解水制氢与 OER 机理研究',
+      },
+    },
+    {
+      school: { en: 'Yale University', zh: '耶鲁大学' },
+      role: { en: 'Summer Research Intern', zh: '暑期科研实习生' },
+      period: 'Jul.2026 ~ Sep.2026',
+      supervisor: {
+        en: 'Supervisor: Shu Hu',
+        zh: '导师：Shu Hu',
+      },
+      supervisorLinks: [
+        {
+          label: 'Personal Web',
+          href: 'https://engineering.yale.edu/research-and-faculty/faculty-directory/shu-hu',
+        },
+        {
+          label: 'Google Scholar',
+          href: 'https://scholar.google.com/citations?user=I2T99bQAAAAJ&hl=en',
+        },
+      ],
+      direction: {
+        en: 'Research: Silicon processing, Photoelectrocatalysis and 3D printing design',
+        zh: '研究方向：硅加工、光电催化与 3D 打印设计',
+      },
+    },
+  ],
   // Contact (shown under the portrait).
   email: '231880021@smail.nju.edu.cn',
   phone: '+86 13927434134',

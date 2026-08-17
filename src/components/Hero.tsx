@@ -1,14 +1,11 @@
 import { profile } from '../data/profile'
-import { MapPin, Mail, Phone } from 'lucide-react'
+import { Mail, Phone, ExternalLink } from 'lucide-react'
 import { useLang, resolveText } from '../i18n/LanguageContext'
 
 export default function Hero() {
   const { lang } = useLang()
   return (
-    <section
-      id="about"
-      className="container-page scroll-mt-20 pt-28 sm:pt-32"
-    >
+    <section id="about" className="container-page scroll-mt-20 pt-28 sm:pt-32">
       <div className="grid items-start gap-10 lg:grid-cols-[260px_1fr] lg:gap-14">
         {/* Photo */}
         <div className="mx-auto flex flex-col items-center gap-4 lg:mx-0 lg:items-start">
@@ -45,19 +42,57 @@ export default function Hero() {
 
         {/* Text */}
         <div className="min-w-0">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-olive-600 dark:text-olive-400">
-            {resolveText(profile.title, lang)}
-          </p>
           <h1 className="text-3xl font-extrabold tracking-tight text-brand-900 sm:text-4xl dark:text-white">
             {profile.name}
           </h1>
-          <p className="mt-1 flex items-center gap-1.5 text-base text-slate-500 dark:text-slate-400">
-            <MapPin className="h-4 w-4" />
-            {resolveText(profile.affiliation, lang)}
-          </p>
+
+          {/* Affiliation blocks */}
+          <div className="mt-5 space-y-5">
+            {profile.affiliations.map((a, i) => (
+              <div key={i} className="border-l-2 border-brand-200 pl-4 dark:border-brand-700">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className="text-base font-bold text-brand-900 dark:text-white">
+                    {resolveText(a.school, lang)}
+                  </span>
+                  <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
+                    {resolveText(a.role, lang)}
+                  </span>
+                  <span className="text-sm font-medium tabular-nums text-olive-600 dark:text-olive-400">
+                    {a.period}
+                  </span>
+                </div>
+
+                <p className="mt-1 text-sm text-slate-700 dark:text-slate-200">
+                  {resolveText(a.supervisor, lang)}
+                  {a.supervisorLinks?.map((l) => (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-2 inline-flex items-center gap-0.5 font-medium text-brand-600 hover:underline dark:text-brand-300"
+                    >
+                      {l.label}
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  ))}
+                </p>
+
+                {a.major && (
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    {resolveText(a.major, lang)}
+                  </p>
+                )}
+
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  {resolveText(a.direction, lang)}
+                </p>
+              </div>
+            ))}
+          </div>
 
           {/* Research interest pills */}
-          <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {profile.researchInterests.map((r, i) => (
               <span key={i} className="pill">
                 {resolveText(r, lang)}
