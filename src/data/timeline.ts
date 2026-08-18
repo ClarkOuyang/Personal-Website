@@ -8,7 +8,7 @@ export const education: TimelineItem[] = [
     id: 'edu-nju',
     role: { en: 'B.S. in New Energy Science and Engineering', zh: '新能源科学与工程 学士' },
     organization: { en: 'Nanjing University', zh: '南京大学' },
-    location: 'Nanjing / Shenzhen, China',
+    location: 'Nanjing, China',
     start: 'Sep 2023',
     end: 'Present',
     description: {
@@ -35,10 +35,10 @@ export const experience: TimelineItem[] = [
     id: 'exp-pemwe',
     role: { en: 'Undergraduate Researcher', zh: '本科研究员' },
     organization: {
-      en: 'Nanjing University — Group of Prof. Zhigang Zou',
-      zh: '南京大学 — 邹志刚教授课题组',
+      en: 'Nanjing University — supervised by Zhaosheng Li & Jianyong Feng (Group of Zhigang Zou)',
+      zh: '南京大学 — 师从李召声、冯建勇（邹志刚教授课题组）',
     },
-    location: 'Shenzhen, China',
+    location: 'Nanjing, China',
     start: 'Feb 2025',
     end: 'Present',
     bullets: [

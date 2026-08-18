@@ -17,7 +17,7 @@ export const profile: Profile = {
     en: 'Nanjing University — Group of Prof. Zhigang Zou',
     zh: '南京大学 — 邹志刚教授课题组',
   },
-  location: 'Shenzhen, Guangdong, China',
+  location: 'Nanjing, China',
   // Two affiliation blocks shown directly under the name in the hero.
   // Edit freely — links open in a new tab.
   affiliations: [
@@ -26,9 +26,20 @@ export const profile: Profile = {
       role: { en: 'Undergraduate', zh: '本科' },
       period: 'Sep.2023 ~ Jun.2027',
       supervisor: {
-        en: 'Supervisor: Zhaosheng Li, Jianyong Feng (Group of Zhigang Zou)',
+        en: 'Supervisor: Zhaosheng Li and Jianyong Feng (Group of Zhigang Zou)',
         zh: '导师：李召声、冯建勇（邹志刚教授课题组）',
       },
+      // Links placed right after the supervisor names above.
+      supervisorLinks: [
+        {
+          label: 'Zhaosheng Li · Google Scholar',
+          href: 'https://scholar.google.com/citations?user=e5fz9VAAAAAJ&hl=zh-CN',
+        },
+        {
+          label: 'Zhigang Zou · College',
+          href: 'https://eng.nju.edu.cn/intl/3d/bb/c34798a474555/page.htm',
+        },
+      ],
       major: {
         en: 'Major: New Energy Science and Engineering',
         zh: '专业：新能源科学与工程',
@@ -69,8 +80,8 @@ export const profile: Profile = {
   photo: '/images/avatar.jpg',
   bio: [
     {
-      en: 'I am Yipeng Ouyang, an undergraduate in New Energy Science and Engineering at Nanjing University (group of Prof. Zhigang Zou, supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng). I work across two complementary directions that converge on clean-energy conversion: (1) semiconductor optoelectronic materials and devices, and (2) photoelectrocatalysis / electrocatalysis for solar-driven hydrogen production.',
-      zh: '我是欧阳奕鹏，南京大学新能源科学与工程专业本科生（邹志刚教授课题组，师从李召声教授与冯建勇教授）。我的研究沿两条相互支撑、共同指向清洁能源转化的主线展开：（1）半导体光电材料与器件；（2）面向太阳能制氢的光电催化 / 电催化。',
+      en: 'I am Yipeng Ouyang, an undergraduate in New Energy Science and Engineering at Nanjing University, supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng (Group of Prof. Zhigang Zou). I work across two complementary directions that converge on clean-energy conversion: (1) semiconductor optoelectronic materials and devices, and (2) photoelectrocatalysis / electrocatalysis for solar-driven hydrogen production.',
+      zh: '我是欧阳奕鹏，南京大学新能源科学与工程专业本科生，师从李召声教授与冯建勇教授（邹志刚教授课题组）。我的研究沿两条相互支撑、共同指向清洁能源转化的主线展开：（1）半导体光电材料与器件；（2）面向太阳能制氢的光电催化 / 电催化。',
     },
     {
       en: 'On the electrocatalysis side, I engineer cobalt-based composite catalysts (CSO) that overcome the intrinsic instability of non-precious metals in acidic oxygen evolution (OER), building durable catalyst-coated membranes for proton exchange membrane water electrolysis (PEMWE) — over 800 h stable operation at 100 mA cm⁻², 1.70 V cell voltage. Characterization spans TEM, SEM, XRD, XPS, XAS, DEMS and in-situ FTIR, with RRDE quantification of surface-pH evolution.',
