@@ -14,8 +14,8 @@ export const news: NewsItem[] = [
       zh: '耶鲁大学暑期科研实习',
     },
     description: {
-      en: 'Joined the Hu / Shu Lab (with Kaidou Zhu Lab) to work on scalable perovskite–Si photoelectrocatalysis for water splitting and designed PEC / SECM cells via 3D printing.',
-      zh: '加入 Hu / Shu 课题组（与朱恺逗课题组合作），研究可放大的钙钛矿—硅光电催化水分解，并通过 3D 打印设计 PEC / SECM 电解池。',
+      en: 'Joined the Shu Hu Lab at Yale University to work on scalable perovskite–Si photoelectrocatalysis for water splitting and designed PEC / SECM cells via 3D printing.',
+      zh: '加入耶鲁大学 Shu Hu 课题组，研究可放大的钙钛矿—硅光电催化水分解，并通过 3D 打印设计 PEC / SECM 电解池。',
     },
     tag: { en: 'Experience', zh: '经历' },
   },

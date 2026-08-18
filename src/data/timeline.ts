@@ -24,8 +24,8 @@ export const education: TimelineItem[] = [
     start: 'Jul 2026',
     end: 'Present',
     description: {
-      en: 'Photoelectrocatalysis for water splitting (Hu / Shu Lab, with Kaidou Zhu Lab).',
-      zh: '光电催化水分解（Hu / Shu 课题组，与朱恺逗课题组合作）。',
+      en: 'Photoelectrocatalysis for water splitting in the Shu Hu Lab at Yale University.',
+      zh: '耶鲁大学 Shu Hu 课题组的太阳能水分解光电催化研究。',
     },
   },
 ]
