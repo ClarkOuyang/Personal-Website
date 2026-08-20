@@ -1,4 +1,5 @@
 import { useTheme } from './hooks/useTheme'
+import { useAccent } from './hooks/useAccent'
 import { LanguageProvider } from './i18n/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -11,6 +12,7 @@ import Footer from './components/Footer'
 
 export default function App() {
   const { theme, toggleTheme } = useTheme()
+  useAccent() // applies the saved/selected accent color across the site
 
   return (
     <LanguageProvider>

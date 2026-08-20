@@ -1,3 +1,31 @@
+/* Accent color variables — default palette (green). Overridden at runtime by
+   the useAccent hook when the user picks a new color in the navbar. Values are
+   space-separated RGB channels so Tailwind's rgb(var() / <alpha>) can use them. */
+:root {
+  --brand-50: 242 250 245;
+  --brand-100: 222 242 230;
+  --brand-200: 191 231 210;
+  --brand-300: 146 212 180;
+  --brand-400: 95 187 146;
+  --brand-500: 61 163 119;
+  --brand-600: 47 132 97;
+  --brand-700: 40 106 79;
+  --brand-800: 35 85 67;
+  --brand-900: 30 70 56;
+  --brand-950: 19 46 37;
+
+  --olive-50: 244 250 242;
+  --olive-100: 230 243 223;
+  --olive-200: 205 230 189;
+  --olive-300: 174 211 149;
+  --olive-400: 140 187 107;
+  --olive-500: 111 158 74;
+  --olive-600: 87 125 57;
+  --olive-700: 66 96 45;
+  --olive-800: 54 77 39;
+  --olive-900: 47 66 35;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
