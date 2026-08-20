@@ -14,8 +14,8 @@ export const news: NewsItem[] = [
       zh: '耶鲁大学暑期科研实习',
     },
     description: {
-      en: 'Joined the Shu Hu Lab at Yale University to work on scalable perovskite–Si photoelectrocatalysis for water splitting and designed PEC / SECM cells via 3D printing.',
-      zh: '加入耶鲁大学 Shu Hu 课题组，研究可放大的钙钛矿—硅光电催化水分解，并通过 3D 打印设计 PEC / SECM 电解池。',
+      en: 'Joined the Shu Hu Lab at **Yale University** to work on scalable perovskite–Si photoelectrocatalysis for water splitting and designed PEC / SECM cells via 3D printing.',
+      zh: '加入**耶鲁大学** Shu Hu 课题组，研究可放大的钙钛矿—硅光电催化水分解，并通过 3D 打印设计 PEC / SECM 电解池。',
     },
     tag: { en: 'Experience', zh: '经历' },
   },
@@ -42,8 +42,8 @@ export const news: NewsItem[] = [
       zh: '开始 PEMWE 电催化本科科研',
     },
     description: {
-      en: 'Joined the group of Prof. Zhigang Zou (Nanjing University), supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng.',
-      zh: '加入南京大学邹志刚教授课题组，师从李召声教授与冯建勇教授。',
+      en: 'Joined Prof. Zhaosheng Li and Prof. Jianyong Feng, affiliated with Group of Prof. Zhigang Zou at **Nanjing University**.',
+      zh: '加入李召声教授与冯建勇教授团队，隶属于**南京大学**邹志刚教授课题组。',
     },
     tag: { en: 'Research', zh: '科研' },
   },
@@ -56,8 +56,8 @@ export const news: NewsItem[] = [
       zh: '欣旺达能源科技研发实习',
     },
     description: {
-      en: 'Conducted electrochemical performance and safety evaluation of lithium-ion batteries and assisted CNAS certification documentation.',
-      zh: '开展锂离子电池电化学性能与安全性评估，并协助 CNAS 认证技术文档整理。',
+      en: 'Conducted electrochemical performance and safety evaluation of lithium-ion batteries and assisted CNAS certification documentation at **Sunwoda Energy Technology Co.**',
+      zh: '在**欣旺达能源科技**开展锂离子电池电化学性能与安全性评估，并协助 CNAS 认证技术文档整理。',
     },
     tag: { en: 'Experience', zh: '经历' },
   },
@@ -69,7 +69,7 @@ export const news: NewsItem[] = [
       en: 'Began studies at Nanjing University',
       zh: '进入南京大学学习',
     },
-    description: { en: 'Major: New Energy Science and Engineering.', zh: '专业：新能源科学与工程。' },
+    description: { en: 'Major: New Energy Science and Engineering at **Nanjing University**.', zh: '专业：**南京大学**新能源科学与工程。' },
     tag: { en: 'Education', zh: '教育' },
   },
 ]

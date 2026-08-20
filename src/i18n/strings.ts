@@ -9,10 +9,10 @@ const en: Record<string, StringValue> = {
   'nav.about': 'About',
   'nav.news': 'News',
   'nav.projects': 'Projects',
-  'nav.gallery': 'Gallery',
+  'nav.gallery': 'Timeline',
   'nav.publications': 'Publications',
   'nav.experience': 'Experience',
-  'nav.contact': 'Contact',
+  'nav.interests': 'Interests',
   'nav.toggleTheme.light': 'Light mode',
   'nav.toggleTheme.dark': 'Dark mode',
   'nav.toggleLang': 'Switch language',
@@ -23,17 +23,22 @@ const en: Record<string, StringValue> = {
   'section.background': 'Background',
   'section.data': 'Research data',
 
-  'heading.news': 'News & Announcements',
+  'heading.news': 'News',
   'heading.projects': 'Research & Projects',
-  'heading.gallery': 'Figure Gallery',
+  'heading.gallery': 'Featured Projects',
   'heading.publications': 'Publications',
   'heading.experience': 'Education & Experience',
   'heading.education': 'Education',
   'heading.experienceTitle': 'Experience',
+  'heading.internship': 'Internship',
+
+  'detail.show': 'Show details',
+  'detail.hide': 'Hide details',
 
   'gallery.intro':
-    'Selected characterization and performance figures from the non-precious-metal PEMWE project (TEM, EDX, EXAFS, EIS, electrochemical benchmarking and device design). Click any figure to enlarge.',
+    'One representative photo per project, ordered newest to oldest.',
   'gallery.click': 'Click any figure to enlarge.',
+  'gallery.photoPending': 'Photo coming soon',
 
   'pub.yearPapers': '{n} papers',
 
@@ -48,6 +53,10 @@ const en: Record<string, StringValue> = {
   'link.copy': 'Copy',
   'link.copied': 'Copied',
 
+  'label.researchInterests': 'Research Interests',
+  'section.beyond': 'Beyond the lab',
+  'heading.interests': 'Interests & Hobbies',
+
   'footer.rights': 'All rights reserved.',
   'footer.built': 'Built with React & Tailwind CSS.',
 
@@ -59,10 +68,10 @@ const zh: Record<string, StringValue> = {
   'nav.about': '关于',
   'nav.news': '动态',
   'nav.projects': '项目',
-  'nav.gallery': '图集',
+  'nav.gallery': '项目时间线',
   'nav.publications': '论文',
   'nav.experience': '经历',
-  'nav.contact': '联系',
+  'nav.interests': '兴趣',
   'nav.toggleTheme.light': '浅色模式',
   'nav.toggleTheme.dark': '深色模式',
   'nav.toggleLang': '切换语言',
@@ -73,17 +82,22 @@ const zh: Record<string, StringValue> = {
   'section.background': '背景',
   'section.data': '研究数据',
 
-  'heading.news': '新闻与动态',
+  'heading.news': '动态',
   'heading.projects': '研究与项目',
-  'heading.gallery': '数据图集',
+  'heading.gallery': '重点项目',
   'heading.publications': '发表论文',
   'heading.experience': '教育与经历',
   'heading.education': '教育背景',
   'heading.experienceTitle': '科研与实习',
+  'heading.internship': '实习经历',
+
+  'detail.show': '展开详情',
+  'detail.hide': '收起详情',
 
   'gallery.intro':
-    '非贵金属 PEMWE 项目的部分表征与性能图（TEM、EDX、EXAFS、EIS、电化学对比与器件设计）。点击任意图可放大查看。',
+    '每个项目一张代表性照片，按时间从新到旧排列。',
   'gallery.click': '点击任意图可放大查看。',
+  'gallery.photoPending': '照片待补充',
 
   'pub.yearPapers': '{n} 篇论文',
 
@@ -97,6 +111,10 @@ const zh: Record<string, StringValue> = {
   'link.bibtex': 'BibTeX',
   'link.copy': '复制',
   'link.copied': '已复制',
+
+  'label.researchInterests': 'Research Interests',
+  'section.beyond': '课余生活',
+  'heading.interests': '兴趣爱好',
 
   'footer.rights': '保留所有权利。',
   'footer.built': '使用 React 与 Tailwind CSS 构建。',

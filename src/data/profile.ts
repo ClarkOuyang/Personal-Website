@@ -19,24 +19,24 @@ export const profile: Profile = {
   },
   location: 'Nanjing, China',
   // Two affiliation blocks shown directly under the name in the hero.
-  // Edit freely — links open in a new tab.
+  // supervisorParts render as inline runs of text; any run with `href` is a link
+  // on that exact name (no separate line).
   affiliations: [
     {
       school: { en: 'Nanjing University', zh: '南京大学' },
       role: { en: 'Undergraduate', zh: '本科' },
       period: 'Sep.2023 ~ Jun.2027',
-      supervisor: {
-        en: 'Supervisor: Zhaosheng Li and Jianyong Feng (Group of Zhigang Zou)',
-        zh: '导师：李召声、冯建勇（邹志刚教授课题组）',
-      },
-      // Links placed right after the supervisor names above.
-      supervisorLinks: [
+      supervisorPrefix: { en: 'Supervisor: ', zh: '导师：' },
+      supervisorParts: [
         {
-          label: 'Zhaosheng Li · Google Scholar',
+          text: { en: 'Zhaosheng Li', zh: '李召声' },
           href: 'https://scholar.google.com/citations?user=e5fz9VAAAAAJ&hl=zh-CN',
         },
+        { text: { en: ' and ', zh: '、' } },
+        { text: { en: 'Jianyong Feng', zh: '冯建勇' } },
+        { text: { en: ', affiliated with Group of ', zh: '，隶属于' } },
         {
-          label: 'Zhigang Zou · College',
+          text: { en: 'Zhigang Zou', zh: '邹志刚教授课题组' },
           href: 'https://eng.nju.edu.cn/intl/3d/bb/c34798a474555/page.htm',
         },
       ],
@@ -53,18 +53,11 @@ export const profile: Profile = {
       school: { en: 'Yale University', zh: '耶鲁大学' },
       role: { en: 'Summer Research Intern', zh: '暑期科研实习生' },
       period: 'Jul.2026 ~ Sep.2026',
-      supervisor: {
-        en: 'Supervisor: Shu Hu',
-        zh: '导师：Shu Hu',
-      },
-      supervisorLinks: [
+      supervisorPrefix: { en: 'Supervisor: ', zh: '导师：' },
+      supervisorParts: [
         {
-          label: 'Personal Web',
+          text: { en: 'Shu Hu', zh: 'Shu Hu' },
           href: 'https://engineering.yale.edu/research-and-faculty/faculty-directory/shu-hu',
-        },
-        {
-          label: 'Google Scholar',
-          href: 'https://scholar.google.com/citations?user=I2T99bQAAAAJ&hl=en',
         },
       ],
       direction: {
@@ -80,27 +73,25 @@ export const profile: Profile = {
   photo: '/images/avatar.jpg',
   bio: [
     {
-      en: 'I am Yipeng Ouyang, an undergraduate in New Energy Science and Engineering at Nanjing University, supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng (Group of Prof. Zhigang Zou). I work across two complementary directions that converge on clean-energy conversion: (1) semiconductor optoelectronic materials and devices, and (2) photoelectrocatalysis / electrocatalysis for solar-driven hydrogen production.',
-      zh: '我是欧阳奕鹏，南京大学新能源科学与工程专业本科生，师从李召声教授与冯建勇教授（邹志刚教授课题组）。我的研究沿两条相互支撑、共同指向清洁能源转化的主线展开：（1）半导体光电材料与器件；（2）面向太阳能制氢的光电催化 / 电催化。',
+      en: 'I am Yipeng Ouyang, an undergraduate in New Energy Science and Engineering at Nanjing University, supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng, affiliated with Group of Prof. Zhigang Zou. I work across two complementary directions that converge on clean-energy conversion: (1) semiconductor optoelectronic materials and devices, and (2) photoelectrocatalysis / electrocatalysis for solar-driven hydrogen production.',
+      zh: '我是欧阳奕鹏，南京大学新能源科学与工程专业本科生，师从李召声教授与冯建勇教授，隶属于邹志刚教授课题组。我的研究沿两条相互支撑、共同指向清洁能源转化的主线展开：（1）半导体光电材料与器件；（2）面向太阳能制氢的光电催化 / 电催化。',
     },
     {
       en: 'On the electrocatalysis side, I engineer cobalt-based composite catalysts (CSO) that overcome the intrinsic instability of non-precious metals in acidic oxygen evolution (OER), building durable catalyst-coated membranes for proton exchange membrane water electrolysis (PEMWE) — over 800 h stable operation at 100 mA cm⁻², 1.70 V cell voltage. Characterization spans TEM, SEM, XRD, XPS, XAS, DEMS and in-situ FTIR, with RRDE quantification of surface-pH evolution.',
       zh: '在电催化方向，我设计钴基复合催化剂（CSO），克服非贵金属在酸性析氧反应（OER）中的本征不稳定性，构建用于质子交换膜水电解（PEMWE）的耐久催化层膜——在 100 mA cm⁻² 下稳定运行超过 800 小时，槽电压 1.70 V。表征涵盖 TEM、SEM、XRD、XPS、XAS、DEMS 与原位 FTIR，并以 RRDE 量化表面 pH 演变。',
     },
     {
-      en: 'On the semiconductor side, my Yale summer research advances scalable perovskite–Si photoelectrocatalysis (PEC) for water splitting: I designed PEC / scanning electrocatalysis microscopy (SECM) cells via 3D printing and fabricated Pt-coated AEMWE anodes by sputtering. I am equally drawn to semiconductor device physics, heterojunction engineering and materials synthesis as levers for efficient solar-to-fuel conversion.',
-      zh: '在半导体方向，我在耶鲁的暑期研究推进可放大的钙钛矿—硅光电催化（PEC）水分解：通过 3D 打印设计 PEC / 扫描电化学显微镜（SECM）电解池，并以溅射法制备 Pt 修饰 AEMWE 阳极。我也同样着迷于半导体器件物理、异质结工程与材料合成，将其视为实现高效太阳能—燃料转换的关键抓手。',
+      en: 'On the semiconductor side, my Yale summer research proceeds in three stages: (1) ALD coating for surface passivation and protection, (2) designing and 3D-printing an SECM reactor cell, and (3) building a scalable perovskite-based photoelectrocatalytic (PEC) water-splitting device. I am equally drawn to semiconductor device physics, heterojunction engineering and materials synthesis as levers for efficient solar-to-fuel conversion.',
+      zh: '在半导体方向，我在耶鲁的暑期研究按以下顺序推进：（1）用于表面钝化与保护的 ALD 镀膜；（2）设计并 3D 打印 SECM 反应电解池；（3）搭建可放大的钙钛矿基光电催化（PEC）水分解器件。我也同样着迷于半导体器件物理、异质结工程与材料合成，将其视为实现高效太阳能—燃料转换的关键抓手。',
     },
   ],
   researchInterests: [
-    { en: 'Semiconductors', zh: '半导体' },
-    { en: 'Optoelectronics', zh: '光电' },
-    { en: 'Photoelectrocatalysis', zh: '光电催化' },
-    { en: 'Electrocatalysis', zh: '电催化' },
-    { en: 'PEM Water Electrolysis', zh: 'PEM 水电解' },
-    { en: 'Hydrogen Production', zh: '制氢' },
-    { en: 'Energy Materials', zh: '能源材料' },
-    { en: 'Automation', zh: '自动化' },
+    { en: 'Semiconductor Photoelectrochemistry', zh: '半导体光电化学' },
+    { en: 'ALD Coating', zh: 'ALD 镀膜' },
+    { en: 'Electrochemistry', zh: '电化学' },
+    { en: '3D Printing Design', zh: '3D 打印设计' },
+    { en: 'Automation Lab', zh: '自动化实验室' },
+    { en: 'AI for Science', zh: '科学智能（AI for Science）' },
   ],
   socials: [
     { type: 'email', href: 'mailto:231880021@smail.nju.edu.cn', label: 'Email' },

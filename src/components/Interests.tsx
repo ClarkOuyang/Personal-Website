@@ -1,0 +1,40 @@
+import { interests } from '../data/interests'
+import { useLang, resolveText } from '../i18n/LanguageContext'
+import { getString } from '../i18n/strings'
+import { ExternalLink } from 'lucide-react'
+
+export default function Interests() {
+  const { lang } = useLang()
+  return (
+    <section id="interests" className="container-page scroll-mt-20 py-16 sm:py-20">
+      <p className="section-subheading">{getString('section.beyond', lang)}</p>
+      <h2 className="section-heading">{getString('heading.interests', lang)}</h2>
+
+      <div className="mt-6 flex flex-wrap gap-3">
+        {interests.map((it, i) =>
+          it.link ? (
+            <a
+              key={i}
+              href={it.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-medium text-brand-700 transition-colors hover:border-brand-400 hover:bg-brand-100 dark:border-brand-700 dark:bg-brand-800/40 dark:text-brand-100"
+            >
+              <span className="text-lg leading-none">{it.icon}</span>
+              {resolveText(it.label, lang)}
+              <ExternalLink className="h-3.5 w-3.5 opacity-60 transition-opacity group-hover:opacity-100" />
+            </a>
+          ) : (
+            <span
+              key={i}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 dark:border-slate-700 dark:bg-slate-900/40 dark:text-slate-300"
+            >
+              <span className="text-lg leading-none">{it.icon}</span>
+              {resolveText(it.label, lang)}
+            </span>
+          )
+        )}
+      </div>
+    </section>
+  )
+}

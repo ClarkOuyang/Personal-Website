@@ -1,6 +1,8 @@
 import { profile } from '../data/profile'
-import { Mail, Phone, ExternalLink } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 import { useLang, resolveText } from '../i18n/LanguageContext'
+import { getString } from '../i18n/strings'
+import { withBase } from '../lib/url'
 
 export default function Hero() {
   const { lang } = useLang()
@@ -12,12 +14,13 @@ export default function Hero() {
           <div className="relative">
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-brand-500 to-olive-500 opacity-20 blur" />
             <img
-              src={profile.photo}
+              src={withBase(profile.photo)}
               alt={`Portrait of ${profile.name}`}
               onError={(e) => {
                 const el = e.currentTarget
-                if (el.src.endsWith('/photo.svg')) return
-                el.src = '/photo.svg'
+                const fallback = withBase('/photo.svg')
+                if (el.src.endsWith(fallback)) return
+                el.src = fallback
               }}
               className="relative h-40 w-40 rounded-2xl border border-slate-200 object-cover shadow-soft sm:h-48 sm:w-48 lg:h-56 lg:w-56 dark:border-slate-700"
             />
@@ -63,19 +66,22 @@ export default function Hero() {
                 </div>
 
                 <p className="mt-1 text-sm text-slate-700 dark:text-slate-200">
-                  {resolveText(a.supervisor, lang)}
-                  {a.supervisorLinks?.map((l) => (
-                    <a
-                      key={l.href}
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-2 inline-flex items-center gap-0.5 font-medium text-brand-600 hover:underline dark:text-brand-300"
-                    >
-                      {l.label}
-                      <ExternalLink className="h-3 w-3" />
-                    </a>
-                  ))}
+                  {resolveText(a.supervisorPrefix, lang)}
+                  {a.supervisorParts.map((part, pi) =>
+                    part.href ? (
+                      <a
+                        key={pi}
+                        href={part.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-brand-600 hover:underline dark:text-brand-300"
+                      >
+                        {resolveText(part.text, lang)}
+                      </a>
+                    ) : (
+                      <span key={pi}>{resolveText(part.text, lang)}</span>
+                    )
+                  )}
                 </p>
 
                 {a.major && (
@@ -92,7 +98,10 @@ export default function Hero() {
           </div>
 
           {/* Research interest pills */}
-          <div className="mt-6 flex flex-wrap gap-2">
+          <p className="mt-6 text-xs font-semibold uppercase tracking-widest text-olive-600 dark:text-olive-400">
+            {getString('label.researchInterests', lang)}
+          </p>
+          <div className="mt-2 flex flex-wrap gap-2">
             {profile.researchInterests.map((r, i) => (
               <span key={i} className="pill">
                 {resolveText(r, lang)}

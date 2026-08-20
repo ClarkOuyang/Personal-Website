@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import Gallery from './components/Gallery'
 import Publications from './components/Publications'
 import Experience from './components/Experience'
+import Interests from './components/Interests'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Gallery />
           <Publications />
           <Experience />
+          <Interests />
         </main>
         <Footer />
       </div>

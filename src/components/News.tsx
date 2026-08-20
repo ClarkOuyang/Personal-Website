@@ -13,6 +13,21 @@ const TAG_COLORS: Record<string, string> = {
   Education: 'bg-teal-100 text-teal-700 dark:bg-teal-800/50 dark:text-teal-100',
 }
 
+/** Minimal **bold** markdown renderer — no HTML injection, just text runs. */
+function renderBold(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g)
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return (
+        <strong key={i} className="font-semibold text-slate-800 dark:text-slate-100">
+          {part.slice(2, -2)}
+        </strong>
+      )
+    }
+    return <span key={i}>{part}</span>
+  })
+}
+
 function sortNews(items: NewsItem[]): NewsItem[] {
   return [...items].sort((a, b) => {
     const ka = a.iso ?? a.date
@@ -56,7 +71,7 @@ export default function News() {
             </div>
             {item.description && (
               <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                {resolveText(item.description, lang)}
+                {renderBold(resolveText(item.description, lang))}
               </p>
             )}
             {item.link && (

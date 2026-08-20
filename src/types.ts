@@ -31,14 +31,20 @@ export interface AffiliationLink {
   href: string
 }
 
+/** A run of supervisor text that may carry its own link (e.g. the name itself). */
+export interface SupervisorPart {
+  text: Bilingual
+  href?: string
+}
+
 export interface HeroAffiliation {
   school: Bilingual
   role: Bilingual
   /** Date range, kept as-is (e.g. "Sep.2023 ~ Jun.2027"). */
   period: string
-  supervisor: Bilingual
-  /** Optional external links shown after the supervisor name. */
-  supervisorLinks?: AffiliationLink[]
+  supervisorPrefix: Bilingual
+  /** Ordered runs of text; any run with `href` renders as an inline link on that text. */
+  supervisorParts: SupervisorPart[]
   /** Optional, e.g. undergraduate major. */
   major?: Bilingual
   direction: Bilingual
@@ -125,4 +131,27 @@ export interface TimelineItem {
   end: string
   description?: Bilingual
   bullets?: Bilingual[]
+  /** Optional logo shown next to the entry (path under /public). */
+  logo?: string
+  /** Optional collapsible detail block (major, research bullets, etc.), collapsed by default. */
+  detail?: {
+    major?: Bilingual
+    bullets?: Bilingual[]
+  }
+}
+
+export interface FeaturedProject {
+  id: string
+  title: Bilingual
+  period: string
+  /** ISO-ish sort key, newest first. */
+  sortKey: string
+  photo: string
+}
+
+export interface Interest {
+  label: Bilingual
+  icon: string
+  /** Optional link to a video / portfolio page for this interest. */
+  link?: string
 }

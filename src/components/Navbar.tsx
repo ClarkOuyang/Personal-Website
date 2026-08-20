@@ -16,7 +16,7 @@ const LINKS: NavLink[] = [
   { key: 'nav.gallery', href: '#gallery' },
   { key: 'nav.publications', href: '#publications' },
   { key: 'nav.experience', href: '#experience' },
-  { key: 'nav.contact', href: '#contact' },
+  { key: 'nav.interests', href: '#interests' },
 ]
 
 export default function Navbar({
@@ -28,6 +28,7 @@ export default function Navbar({
 }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeHref, setActiveHref] = useState(LINKS[0].href)
   const { lang, toggleLang } = useLang()
 
   useEffect(() => {
@@ -35,6 +36,29 @@ export default function Navbar({
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // Scrollspy: highlight the nav link for whichever section is most visible.
+  useEffect(() => {
+    const sections = LINKS.map((l) => document.querySelector(l.href)).filter(
+      (el): el is Element => !!el
+    )
+    if (sections.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting)
+        if (visible.length === 0) return
+        // Prefer the entry closest to the top of the viewport.
+        const top = visible.reduce((a, b) =>
+          a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+        )
+        setActiveHref(`#${top.target.id}`)
+      },
+      { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+    )
+    sections.forEach((s) => observer.observe(s))
+    return () => observer.disconnect()
   }, [])
 
   const close = () => setOpen(false)
@@ -69,7 +93,11 @@ export default function Navbar({
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-brand-50 hover:text-brand-700 dark:text-slate-300 dark:hover:bg-brand-800/50 dark:hover:text-white"
+              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                activeHref === item.href
+                  ? 'bg-brand-50 text-brand-700 dark:bg-brand-800/60 dark:text-white'
+                  : 'text-slate-600 hover:bg-brand-50 hover:text-brand-700 dark:text-slate-300 dark:hover:bg-brand-800/50 dark:hover:text-white'
+              }`}
             >
               {getString(item.key, lang)}
             </a>
@@ -103,7 +131,11 @@ export default function Navbar({
                 key={item.href}
                 href={item.href}
                 onClick={close}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-brand-50 dark:text-slate-200 dark:hover:bg-brand-800/50"
+                className={`rounded-md px-3 py-2.5 text-sm font-medium ${
+                  activeHref === item.href
+                    ? 'bg-brand-50 text-brand-700 dark:bg-brand-800/60 dark:text-white'
+                    : 'text-slate-700 hover:bg-brand-50 dark:text-slate-200 dark:hover:bg-brand-800/50'
+                }`}
               >
                 {getString(item.key, lang)}
               </a>
