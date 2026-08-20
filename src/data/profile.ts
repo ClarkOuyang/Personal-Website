@@ -30,7 +30,7 @@ export const profile: Profile = {
       supervisorPrefix: { en: 'Supervisor: ', zh: '导师：' },
       supervisorParts: [
         {
-          text: { en: 'Zhaosheng Li', zh: '李召声' },
+          text: { en: 'Zhaosheng Li', zh: '李朝升' },
           href: 'https://scholar.google.com/citations?user=e5fz9VAAAAAJ&hl=zh-CN',
         },
         { text: { en: ' and ', zh: '、' } },
@@ -57,7 +57,7 @@ export const profile: Profile = {
       supervisorPrefix: { en: 'Supervisor: ', zh: '导师：' },
       supervisorParts: [
         {
-          text: { en: 'Shu Hu', zh: 'Shu Hu' },
+          text: { en: 'Shu Hu', zh: '胡澍' },
           href: 'https://engineering.yale.edu/research-and-faculty/faculty-directory/shu-hu',
         },
       ],
@@ -90,7 +90,7 @@ export const profile: Profile = {
   bio: [
     {
       en: 'I am Yipeng Ouyang, an undergraduate in New Energy Science and Engineering at Nanjing University, supervised by Prof. Zhaosheng Li and Prof. Jianyong Feng, affiliated with Group of Prof. Zhigang Zou. I work across two complementary directions that converge on clean-energy conversion: (1) semiconductor optoelectronic materials and devices, and (2) photoelectrocatalysis / electrocatalysis for solar-driven hydrogen production.',
-      zh: '我是欧阳奕鹏，南京大学新能源科学与工程专业本科生，师从李召声教授与冯建勇教授，隶属于邹志刚教授课题组。我的研究沿两条相互支撑、共同指向清洁能源转化的主线展开：（1）半导体光电材料与器件；（2）面向太阳能制氢的光电催化 / 电催化。',
+      zh: '我是欧阳益鹏，南京大学新能源科学与工程专业本科生，师从李朝升教授与冯建勇教授，隶属于邹志刚教授课题组。我的研究沿两条相互支撑、共同指向清洁能源转化的主线展开：（1）半导体光电材料与器件；（2）面向太阳能制氢的光电催化 / 电催化。',
     },
     {
       en: 'On the electrocatalysis side, I engineer cobalt-based composite catalysts (CSO) that overcome the intrinsic instability of non-precious metals in acidic oxygen evolution (OER), building durable catalyst-coated membranes for proton exchange membrane water electrolysis (PEMWE) — over 800 h stable operation at 100 mA cm⁻², 1.70 V cell voltage. Characterization spans TEM, SEM, XRD, XPS, XAS, DEMS and in-situ FTIR, with RRDE quantification of surface-pH evolution.',

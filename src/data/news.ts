@@ -43,7 +43,7 @@ export const news: NewsItem[] = [
     },
     description: {
       en: 'Joined Prof. Zhaosheng Li and Prof. Jianyong Feng, affiliated with Group of Prof. Zhigang Zou at **Nanjing University**.',
-      zh: '加入李召声教授与冯建勇教授团队，隶属于**南京大学**邹志刚教授课题组。',
+      zh: '加入李朝升教授与冯建勇教授团队，隶属于**南京大学**邹志刚教授课题组。',
     },
     tag: { en: 'Research', zh: '科研' },
   },
