@@ -18,12 +18,12 @@ function LogoBadge({ logo, name }: { logo?: string; name: string }) {
       <img
         src={withBase(logo)}
         alt={name}
-        className="h-9 w-9 shrink-0 rounded-lg border border-slate-200 bg-white object-contain p-1 dark:border-slate-700"
+        className="h-[4.5rem] w-[4.5rem] shrink-0 rounded-xl border border-slate-200 bg-white object-contain p-1.5 dark:border-slate-700"
       />
     )
   }
   return (
-    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-700 text-xs font-bold text-white">
+    <span className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-xl bg-brand-700 text-base font-bold text-white">
       {initials}
     </span>
   )
