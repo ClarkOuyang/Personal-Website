@@ -33,6 +33,15 @@ export default function Hero() {
               <Mail className="h-4 w-4 text-olive-600 dark:text-olive-400" />
               {profile.email}
             </a>
+            {profile.emailGmail && (
+              <a
+                href={`mailto:${profile.emailGmail}`}
+                className="flex items-center justify-center gap-1.5 hover:text-brand-700 dark:hover:text-brand-200 lg:justify-start"
+              >
+                <Mail className="h-4 w-4 text-olive-600 dark:text-olive-400" />
+                {profile.emailGmail}
+              </a>
+            )}
             <a
               href={`tel:${profile.phone}`}
               className="flex items-center justify-center gap-1.5 hover:text-brand-700 dark:hover:text-brand-200 lg:justify-start"
@@ -40,6 +49,15 @@ export default function Hero() {
               <Phone className="h-4 w-4 text-olive-600 dark:text-olive-400" />
               {profile.phone}
             </a>
+            {profile.phoneTW && (
+              <a
+                href={`tel:${profile.phoneTW}`}
+                className="flex items-center justify-center gap-1.5 hover:text-brand-700 dark:hover:text-brand-200 lg:justify-start"
+              >
+                <Phone className="h-4 w-4 text-olive-600 dark:text-olive-400" />
+                {profile.phoneTW}
+              </a>
+            )}
             {profile.addresses?.map((addr, i) => (
               <p
                 key={i}
@@ -47,8 +65,7 @@ export default function Hero() {
               >
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-olive-600 dark:text-olive-400" />
                 <span>
-                  {addr.lines}
-                  <span className="text-slate-400"> ({addr.postalCode})</span>
+                  {addr.lines} {addr.postalCode}
                 </span>
               </p>
             ))}

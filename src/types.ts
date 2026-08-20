@@ -69,7 +69,11 @@ export interface Profile {
   location: string
   /** Contact details shown in the footer. */
   email: string
+  /** Optional secondary email (e.g. a personal Gmail). */
+  emailGmail?: string
   phone: string
+  /** Optional secondary phone (e.g. a Taiwan mobile number). */
+  phoneTW?: string
   /** Optional mailing addresses shown under the phone number. */
   addresses?: Address[]
   /** Path under /public or an absolute URL. Use a square image for best results. */

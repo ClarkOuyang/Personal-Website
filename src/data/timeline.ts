@@ -106,9 +106,9 @@ export const experience: TimelineItem[] = [
     role: { en: 'Private Tutor', zh: '家教' },
     organization: { en: 'Middle School Math & English', zh: '初中数学与英文' },
     location: '',
-    start: '',
-    end: 'Grade 10 – Junior Year',
-    logo: '',
+    start: 'Jan 2022',
+    end: 'Aug 2025',
+    logo: 'logos/private-tutor.png',
     detail: {
       bullets: [
         {

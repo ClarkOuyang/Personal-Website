@@ -69,7 +69,9 @@ export const profile: Profile = {
   ],
   // Contact (shown under the portrait).
   email: '231880021@smail.nju.edu.cn',
+  emailGmail: 'c2914154829@gmail.com',
   phone: '+86 13927434134',
+  phoneTW: '+886 0912841316',
   addresses: [
     {
       label: { en: 'Address 1', zh: '地址一' },
