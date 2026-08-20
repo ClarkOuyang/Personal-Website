@@ -70,7 +70,7 @@ export const education: TimelineItem[] = [
     role: { en: "Taiwan Businessmen's Dongguan School", zh: '东莞台商子弟学校' },
     organization: { en: 'High School', zh: '中学' },
     location: 'Dongguan, China',
-    start: '',
+    start: 'Mar 2019',
     end: 'Jun 2023',
     logo: 'logos/tbds-badge.jpg',
   },
