@@ -9,6 +9,7 @@ import type { Profile } from '../types'
 export const profile: Profile = {
   name: 'Yipeng Ouyang',
   firstName: 'Yipeng',
+  fullName: 'Yipeng Clark Ouyang',
   title: {
     en: 'Undergraduate Researcher · B.S. Candidate in New Energy Science and Engineering',
     zh: '本科生研究员 · 新能源科学与工程专业学士候选人',
@@ -69,6 +70,19 @@ export const profile: Profile = {
   // Contact (shown under the portrait).
   email: '231880021@smail.nju.edu.cn',
   phone: '+86 13927434134',
+  addresses: [
+    {
+      label: { en: 'Address 1', zh: '地址一' },
+      lines: '14 Wensan 3rd St, Guishan Dist., Taoyuan City, Taiwan',
+      postalCode: '333',
+    },
+    {
+      label: { en: 'Address 2', zh: '地址二' },
+      lines:
+        '201, Block H, Haitong Yuan, Sijihuacheng, Bantian St., Longgang Dist., Shenzhen City, Guangdong Prov., China',
+      postalCode: '518129',
+    },
+  ],
   // Put your photo at public/images/avatar.jpg (square, ~400×400 looks best).
   photo: '/images/avatar.jpg',
   bio: [

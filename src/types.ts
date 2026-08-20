@@ -50,10 +50,18 @@ export interface HeroAffiliation {
   direction: Bilingual
 }
 
+export interface Address {
+  label: Bilingual
+  lines: string
+  postalCode: string
+}
+
 export interface Profile {
   name: string
   /** Short first name used for the hero greeting. */
   firstName: string
+  /** Full display name shown as the H1 in the hero, page title, navbar, footer. */
+  fullName?: string
   title: Bilingual
   affiliation: Bilingual
   /** Two-column affiliation blocks shown directly under the name in the hero. */
@@ -62,6 +70,8 @@ export interface Profile {
   /** Contact details shown in the footer. */
   email: string
   phone: string
+  /** Optional mailing addresses shown under the phone number. */
+  addresses?: Address[]
   /** Path under /public or an absolute URL. Use a square image for best results. */
   photo: string
   /** Each entry is rendered as a separate paragraph. */
@@ -147,6 +157,12 @@ export interface FeaturedProject {
   /** ISO-ish sort key, newest first. */
   sortKey: string
   photo: string
+  /** Optional collapsible detail — full description + keywords, collapsed by default. */
+  detail?: {
+    description: Bilingual
+    keywords?: Bilingual[]
+    status?: Bilingual
+  }
 }
 
 export interface Interest {

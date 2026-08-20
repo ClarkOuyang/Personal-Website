@@ -101,4 +101,25 @@ export const experience: TimelineItem[] = [
       ],
     },
   },
+  {
+    id: 'exp-tutoring',
+    role: { en: 'Private Tutor', zh: '家教' },
+    organization: { en: 'Middle School Math & English', zh: '初中数学与英文' },
+    location: '',
+    start: '',
+    end: 'Grade 10 – Junior Year',
+    logo: '',
+    detail: {
+      bullets: [
+        {
+          en: 'Tutored five students, on and off, from high school through junior year of college.',
+          zh: '从高一到大三，陆陆续续教了五个小孩。',
+        },
+        {
+          en: 'Focused primarily on middle-school math and English.',
+          zh: '主要教初中数学与英文。',
+        },
+      ],
+    },
+  },
 ]

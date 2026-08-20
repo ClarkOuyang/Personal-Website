@@ -189,7 +189,6 @@ export default function Publications() {
 
   return (
     <section id="publications" className="container-page scroll-mt-20 py-16 sm:py-20">
-      <p className="section-subheading">{getString('section.selected', lang)}</p>
       <h2 className="section-heading">{getString('heading.publications', lang)}</h2>
 
       <div className="mt-8 space-y-10">

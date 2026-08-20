@@ -7,7 +7,6 @@ export default function Interests() {
   const { lang } = useLang()
   return (
     <section id="interests" className="container-page scroll-mt-20 py-16 sm:py-20">
-      <p className="section-subheading">{getString('section.beyond', lang)}</p>
       <h2 className="section-heading">{getString('heading.interests', lang)}</h2>
 
       <div className="mt-6 flex flex-wrap gap-3">

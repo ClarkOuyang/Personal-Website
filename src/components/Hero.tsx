@@ -1,5 +1,5 @@
 import { profile } from '../data/profile'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import { useLang, resolveText } from '../i18n/LanguageContext'
 import { getString } from '../i18n/strings'
 import { withBase } from '../lib/url'
@@ -40,13 +40,25 @@ export default function Hero() {
               <Phone className="h-4 w-4 text-olive-600 dark:text-olive-400" />
               {profile.phone}
             </a>
+            {profile.addresses?.map((addr, i) => (
+              <p
+                key={i}
+                className="flex items-start justify-center gap-1.5 pt-1 text-center leading-snug lg:justify-start lg:text-left"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-olive-600 dark:text-olive-400" />
+                <span>
+                  {addr.lines}
+                  <span className="text-slate-400"> ({addr.postalCode})</span>
+                </span>
+              </p>
+            ))}
           </div>
         </div>
 
         {/* Text */}
         <div className="min-w-0">
           <h1 className="text-3xl font-extrabold tracking-tight text-brand-900 sm:text-4xl dark:text-white">
-            {profile.name}
+            {profile.fullName ?? profile.name}
           </h1>
 
           {/* Affiliation blocks */}

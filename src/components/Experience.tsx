@@ -112,7 +112,6 @@ export default function Experience() {
       className="scroll-mt-20 border-t border-slate-100 bg-slate-50/60 py-16 sm:py-20 dark:border-slate-800 dark:bg-white/[0.02]"
     >
       <div className="container-page">
-        <p className="section-subheading">{getString('section.background', lang)}</p>
         <h2 className="section-heading">{getString('heading.experience', lang)}</h2>
 
         <div className="mt-8 grid gap-12 md:grid-cols-2">

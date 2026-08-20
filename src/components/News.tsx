@@ -42,7 +42,6 @@ export default function News() {
 
   return (
     <section id="news" className="container-page scroll-mt-20 py-16 sm:py-20">
-      <p className="section-subheading">{getString('section.recent', lang)}</p>
       <h2 className="section-heading">{getString('heading.news', lang)}</h2>
 
       <ol className="relative mt-2 border-l-2 border-slate-200 pl-6 dark:border-slate-700">

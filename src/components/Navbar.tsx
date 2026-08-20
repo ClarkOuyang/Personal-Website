@@ -12,7 +12,6 @@ interface NavLink {
 const LINKS: NavLink[] = [
   { key: 'nav.about', href: '#about' },
   { key: 'nav.news', href: '#news' },
-  { key: 'nav.projects', href: '#projects' },
   { key: 'nav.gallery', href: '#gallery' },
   { key: 'nav.publications', href: '#publications' },
   { key: 'nav.experience', href: '#experience' },

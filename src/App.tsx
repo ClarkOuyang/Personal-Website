@@ -3,7 +3,6 @@ import { LanguageProvider } from './i18n/LanguageContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import News from './components/News'
-import Projects from './components/Projects'
 import Gallery from './components/Gallery'
 import Publications from './components/Publications'
 import Experience from './components/Experience'
@@ -20,7 +19,6 @@ export default function App() {
         <main>
           <Hero />
           <News />
-          <Projects />
           <Gallery />
           <Publications />
           <Experience />
