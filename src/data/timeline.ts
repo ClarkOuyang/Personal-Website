@@ -14,7 +14,7 @@ export const education: TimelineItem[] = [
     location: 'New Haven, CT, USA',
     start: 'Jul 2026',
     end: 'Present',
-    logo: '', // TODO: add /public/logos/yale.png
+    logo: 'logos/yale-shield.svg',
     detail: {
       bullets: [
         {
@@ -39,7 +39,7 @@ export const education: TimelineItem[] = [
     location: 'Nanjing, China',
     start: 'Sep 2023',
     end: 'Present',
-    logo: '', // TODO: add /public/logos/nju.png
+    logo: 'logos/nju-badge.webp',
     detail: {
       major: {
         en: 'Major courses: Materials Science, Optics, Thermology, Electrochemistry, Catalysis, Physical Chemistry.',
@@ -72,7 +72,7 @@ export const education: TimelineItem[] = [
     location: 'Dongguan, China',
     start: '',
     end: 'Jun 2023',
-    logo: '', // TODO: add /public/logos/tbds.png
+    logo: 'logos/tbds-badge.jpg',
   },
 ]
 
@@ -87,7 +87,7 @@ export const experience: TimelineItem[] = [
     location: 'Shenzhen, China',
     start: 'Jul 2025',
     end: 'Aug 2025',
-    logo: '', // TODO: add /public/logos/sunwoda.png
+    logo: 'logos/sunwoda-logo.png',
     detail: {
       bullets: [
         {

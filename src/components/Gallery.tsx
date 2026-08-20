@@ -6,21 +6,6 @@ import { getString } from '../i18n/strings'
 import { withBase } from '../lib/url'
 import { ChevronDown } from 'lucide-react'
 
-// Affiliated institutions & partners — shown as a logo wall below the
-// research projects. Drop new files in public/logos/ and add an entry here.
-const logos: { src: string; name: { en: string; zh: string } }[] = [
-  { src: 'logos/nju-badge.webp', name: { en: 'Nanjing University', zh: '南京大学' } },
-  { src: 'logos/yale-shield.svg', name: { en: 'Yale University', zh: '耶鲁大学' } },
-  {
-    src: 'logos/tbds-badge.jpg',
-    name: { en: "Taiwan Businessmen's Dongguan School", zh: '东莞台商子弟学校' },
-  },
-  {
-    src: 'logos/sunwoda-logo.png',
-    name: { en: 'Sunwoda Energy Technology', zh: '欣旺达能源科技' },
-  },
-]
-
 export default function Gallery() {
   const { lang } = useLang()
   const sorted = [...featuredProjects].sort((a, b) => (a.sortKey < b.sortKey ? 1 : -1))
@@ -33,29 +18,6 @@ export default function Gallery() {
         {sorted.map((p) => (
           <ProjectCard key={p.id} project={p} lang={lang} />
         ))}
-      </div>
-
-      <div className="mx-auto mt-14 max-w-2xl">
-        <h3 className="mb-4 text-base font-semibold text-brand-900 dark:text-white">
-          {getString('gallery.logosTitle', lang)}
-        </h3>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {logos.map((l) => (
-            <div
-              key={l.src}
-              className="flex flex-col items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-700"
-            >
-              <img
-                src={withBase(l.src)}
-                alt={resolveText(l.name, lang)}
-                className="h-14 w-auto max-w-full object-contain"
-              />
-              <span className="text-center text-xs font-medium text-slate-600 dark:text-slate-300">
-                {resolveText(l.name, lang)}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )
