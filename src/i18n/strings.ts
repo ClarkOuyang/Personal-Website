@@ -39,6 +39,7 @@ const en: Record<string, StringValue> = {
     'One representative photo per project, ordered newest to oldest.',
   'gallery.click': 'Click any figure to enlarge.',
   'gallery.photoPending': 'Photo coming soon',
+  'gallery.logosTitle': 'Institutions & Partners',
 
   'pub.yearPapers': '{n} papers',
 
@@ -98,6 +99,7 @@ const zh: Record<string, StringValue> = {
     '每个项目一张代表性照片，按时间从新到旧排列。',
   'gallery.click': '点击任意图可放大查看。',
   'gallery.photoPending': '照片待补充',
+  'gallery.logosTitle': '院校与合作机构',
 
   'pub.yearPapers': '{n} 篇论文',
 
