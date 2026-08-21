@@ -14,7 +14,7 @@ export default function Gallery() {
     <section id="gallery" className="container-page scroll-mt-20 py-16 sm:py-20">
       <h2 className="section-heading">{getString('heading.gallery', lang)}</h2>
 
-      <div className="mx-auto flex max-w-4xl flex-col gap-5">
+      <div className="mx-auto flex max-w-6xl flex-col gap-5">
         {sorted.map((p) => (
           <ProjectCard key={p.id} project={p} lang={lang} />
         ))}
@@ -43,16 +43,16 @@ function ProjectCard({ project: p, lang }: { project: FeaturedProject; lang: 'en
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900/40">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-        {/* Left: large photo frame (size preserved ~640px wide), content never cropped. */}
-        <div className="relative w-full shrink-0 overflow-hidden rounded-lg bg-slate-100 sm:w-[640px] dark:bg-slate-800">
+        {/* Left: large photo frame (size preserved, taller to reduce empty margins), content never cropped. */}
+        <div className="relative w-full shrink-0 overflow-hidden rounded-lg bg-slate-100 sm:w-[720px] dark:bg-slate-800">
           {current ? (
             <img
               src={withBase(current)}
               alt={`${resolveText(p.title, lang)} (${idx + 1}/${images.length})`}
-              className="h-72 w-full object-contain sm:h-80"
+              className="h-80 w-full object-contain sm:h-[440px]"
             />
           ) : (
-            <div className="flex h-72 w-full items-center justify-center sm:h-80">
+            <div className="flex h-80 w-full items-center justify-center sm:h-[440px]">
               <span className="text-xs font-medium uppercase tracking-wide text-slate-400">
                 {getString('gallery.photoPending', lang)}
               </span>
