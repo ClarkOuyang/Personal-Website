@@ -21,6 +21,14 @@ export const featuredProjects: FeaturedProject[] = [
     period: 'Yale, 2026',
     sortKey: '2026-08',
     photo: '', // TODO: add /public/projects/secm.jpg
+    photos: [
+      'projects/secm-solid-assembly.png',
+      'projects/secm-transparent-assembly.png',
+      'projects/secm-01.jpg',
+      'projects/secm-02.jpg',
+      'projects/secm-04.jpg',
+      'projects/secm-05.jpg',
+    ],
     detail: {
       description: {
         en: 'Designed and 3D-printed scanning electrocatalysis microscopy (SECM) reactor cells for photoelectrocatalytic water-splitting studies.',
