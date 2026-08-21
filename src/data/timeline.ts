@@ -108,6 +108,7 @@ export const experience: TimelineItem[] = [
     location: 'Shenzhen, China',
     start: 'Jul 2024',
     end: 'Aug 2024',
+    logo: 'logos/yongdali-logo.png',
     detail: {
       bullets: [
         {
