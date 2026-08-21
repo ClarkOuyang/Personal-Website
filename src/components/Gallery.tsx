@@ -43,16 +43,16 @@ function ProjectCard({ project: p, lang }: { project: FeaturedProject; lang: 'en
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900/40">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-        {/* Left: large photo frame (size preserved, taller to reduce empty margins), content never cropped. */}
-        <div className="relative w-full shrink-0 overflow-hidden rounded-lg bg-slate-100 sm:w-[720px] dark:bg-slate-800">
+        {/* Left: photo frame (half the previous size), content never cropped. */}
+        <div className="relative w-full shrink-0 overflow-hidden rounded-lg bg-slate-100 sm:w-[360px] dark:bg-slate-800">
           {current ? (
             <img
               src={withBase(current)}
               alt={`${resolveText(p.title, lang)} (${idx + 1}/${images.length})`}
-              className="h-80 w-full object-contain sm:h-[440px]"
+              className="h-44 w-full object-contain sm:h-[220px]"
             />
           ) : (
-            <div className="flex h-80 w-full items-center justify-center sm:h-[440px]">
+            <div className="flex h-44 w-full items-center justify-center sm:h-[220px]">
               <span className="text-xs font-medium uppercase tracking-wide text-slate-400">
                 {getString('gallery.photoPending', lang)}
               </span>
@@ -94,12 +94,12 @@ function ProjectCard({ project: p, lang }: { project: FeaturedProject; lang: 'en
           )}
         </div>
 
-        {/* Right: text content. */}
+        {/* Right: text content (wider now that the photo is smaller). */}
         <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-semibold text-brand-900 dark:text-white">
+          <h3 className="text-base font-semibold leading-snug text-brand-900 dark:text-white">
             {resolveText(p.title, lang)}
           </h3>
-          <p className="mt-0.5 text-xs font-medium text-olive-600 dark:text-olive-400">
+          <p className="mt-1 text-xs font-medium text-olive-600 dark:text-olive-400">
             {p.period}
           </p>
           {hasDetail && (
