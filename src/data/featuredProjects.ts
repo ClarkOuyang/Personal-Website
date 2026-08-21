@@ -21,6 +21,18 @@ export const featuredProjects: FeaturedProject[] = [
     period: 'Yale, 2026',
     sortKey: '2026-08',
     photo: '', // TODO: add /public/projects/secm.jpg
+    detail: {
+      description: {
+        en: 'Designed and 3D-printed scanning electrocatalysis microscopy (SECM) reactor cells for photoelectrocatalytic water-splitting studies.',
+        zh: '设计并 3D 打印扫描电化学显微镜（SECM）反应电解池，用于光电催化水分解研究。',
+      },
+      keywords: [
+        { en: 'SECM', zh: 'SECM' },
+        { en: '3D Printing', zh: '3D 打印' },
+        { en: 'Reactor Cell', zh: '反应电解池' },
+      ],
+      status: { en: 'Yale summer research (2026)', zh: '耶鲁暑期研究（2026）' },
+    },
   },
   {
     id: 'proj-pec',
@@ -33,8 +45,8 @@ export const featuredProjects: FeaturedProject[] = [
     photo: '', // TODO: add /public/projects/pec.jpg
     detail: {
       description: {
-        en: 'Summer research at Yale University on photoelectrocatalytic water splitting in alkaline water. Designed perovskite–Si photoelectrocatalysis (PEC) and scanning electrocatalysis microscopy (SECM) cells with a 3D printer, and fabricated Pt-coated AEMWE anodes by sputtering.',
-        zh: '耶鲁大学暑期研究，面向碱性水环境中的光电催化水分解。通过 3D 打印设计钙钛矿—硅光电催化（PEC）与扫描电化学显微镜（SECM）电解池，并以溅射法制备 Pt 修饰的 AEMWE 阳极。',
+        en: 'Summer research at Yale University on photoelectrocatalytic water splitting in alkaline water. Designed perovskite–Si photoelectrocatalysis (PEC) and fabricated Pt-coated AEMWE anodes by sputtering.',
+        zh: '耶鲁大学暑期研究，面向碱性水环境中的光电催化水分解。设计钙钛矿—硅光电催化（PEC），并以溅射法制备 Pt 修饰的 AEMWE 阳极。',
       },
       keywords: [
         { en: 'Photoelectrocatalysis', zh: '光电催化' },

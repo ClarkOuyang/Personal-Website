@@ -2,28 +2,29 @@
    the useAccent hook when the user picks a new color in the navbar. Values are
    space-separated RGB channels so Tailwind's rgb(var() / <alpha>) can use them. */
 :root {
-  --brand-50: 242 250 245;
-  --brand-100: 222 242 230;
-  --brand-200: 191 231 210;
-  --brand-300: 146 212 180;
-  --brand-400: 95 187 146;
-  --brand-500: 61 163 119;
-  --brand-600: 47 132 97;
-  --brand-700: 40 106 79;
-  --brand-800: 35 85 67;
-  --brand-900: 30 70 56;
-  --brand-950: 19 46 37;
+  --brand-50: 237 241 247;
+  --brand-100: 212 221 237;
+  --brand-200: 155 188 242;
+  --brand-300: 101 152 236;
+  --brand-400: 51 119 229;
+  --brand-500: 26 93 204;
+  --brand-600: 22 79 172;
+  --brand-700: 18 66 145;
+  --brand-800: 15 56 122;
+  --brand-900: 7 44 105;
+  --brand-950: 5 30 71;
 
-  --olive-50: 244 250 242;
-  --olive-100: 230 243 223;
-  --olive-200: 205 230 189;
-  --olive-300: 174 211 149;
-  --olive-400: 140 187 107;
-  --olive-500: 111 158 74;
-  --olive-600: 87 125 57;
-  --olive-700: 66 96 45;
-  --olive-800: 54 77 39;
-  --olive-900: 47 66 35;
+  --olive-50: 240 238 247;
+  --olive-100: 219 213 236;
+  --olive-200: 180 160 238;
+  --olive-300: 138 108 229;
+  --olive-400: 101 60 220;
+  --olive-500: 75 35 195;
+  --olive-600: 64 29 165;
+  --olive-700: 54 25 139;
+  --olive-800: 45 21 117;
+  --olive-900: 35 12 100;
+  --olive-950: 24 8 68;
 }
 
 @tailwind base;

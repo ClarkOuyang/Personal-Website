@@ -102,6 +102,30 @@ export const experience: TimelineItem[] = [
     },
   },
   {
+    id: 'exp-yongdali',
+    role: { en: 'Yongda Li Insurance Brokers', zh: '永达理保险经纪公司' },
+    organization: { en: 'Assistant to General Manager', zh: '总经理助理' },
+    location: 'Shenzhen, China',
+    start: 'Jul 2024',
+    end: 'Aug 2024',
+    detail: {
+      bullets: [
+        {
+          en: 'Produced presentations (PPT) for internal briefings and client meetings.',
+          zh: '为内部会议与客户洽谈制作演示文稿（PPT）。',
+        },
+        {
+          en: 'Received and entertained high-end clients, supporting relationship management.',
+          zh: '接待并服务高端客户，协助客户关系维护。',
+        },
+        {
+          en: 'Planned and coordinated company marketing and networking events.',
+          zh: '策划并协办公司市场推广与客户活动。',
+        },
+      ],
+    },
+  },
+  {
     id: 'exp-tutoring',
     role: { en: 'Private Tutor', zh: '家教' },
     organization: { en: 'Middle School Math & English', zh: '初中数学与英文' },
