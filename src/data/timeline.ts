@@ -103,7 +103,7 @@ export const experience: TimelineItem[] = [
   },
   {
     id: 'exp-yongdali',
-    role: { en: 'Yongda Li Insurance Brokers', zh: '永达理保险经纪公司' },
+    role: { en: 'Everpro Insurance Brokers Co., Ltd.', zh: '永达理保险经纪公司' },
     organization: { en: 'Assistant to General Manager', zh: '总经理助理' },
     location: 'Shenzhen, China',
     start: 'Jul 2024',
