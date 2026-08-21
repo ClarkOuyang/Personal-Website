@@ -161,6 +161,8 @@ export interface FeaturedProject {
   /** ISO-ish sort key, newest first. */
   sortKey: string
   photo: string
+  /** Optional gallery of photos shown as a left/right carousel (e.g. multi-panel figures). */
+  photos?: string[]
   /** Optional collapsible detail — full description + keywords, collapsed by default. */
   detail?: {
     description: Bilingual

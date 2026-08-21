@@ -66,6 +66,13 @@ export const featuredProjects: FeaturedProject[] = [
     period: 'Nanjing University, 2025',
     sortKey: '2025-02',
     photo: '', // TODO: add /public/projects/pemwe.jpg
+    photos: [
+      'projects/cso-01.jpg',
+      'projects/cso-02.jpg',
+      'projects/cso-03.jpg',
+      'projects/cso-04.jpg',
+      'projects/cso-05.jpg',
+    ],
     detail: {
       description: {
         en: 'Engineered a cobalt-based composite catalyst (CSO) integrating transition-metal oxides to overcome the intrinsic instability of non-precious metals in acidic OER. Fabricated high-performance catalyst-coated membranes (CCM) via optimized sol–gel synthesis and ink formulation for PEMWE integration, achieving stable operation for over 800 hours at 100 mA cm⁻² with a 1.70 V cell voltage. Characterized the OER mechanism and material structure with TEM, SEM, XRD, XPS, XAS, DEMS and in-situ FTIR, studied surface-pH evolution using a rotating ring-disk electrode (RRDE), and resolved Co–O / Co–Co / Sb–O coordination environments by EXAFS fitting.',
